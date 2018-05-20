@@ -29,6 +29,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 }
   </style>
  </head>
@@ -36,7 +37,7 @@
 <div id="preloader">
   <div id="status">&nbsp;</div>
 </div>
- <nav class="navbar navbar-inverse" style="background-color:#082843" data-spy="affix" data-offset-top="400">
+ <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:#082843">
   <div class="container-fluid">
     <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false" aria-controls="navbar">
@@ -55,8 +56,15 @@
         <li>
         <a href="#" style="color:; background-color:;" ><h4>Technology</h4></a>
         </li>
-         <li>
-        <a href="#" style="color:; background-color:;" ><h4>Entertianment</h4></a>
+         <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:; background-color:;" ><h4>Entertainment<span class="caret"></span></h4></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Music</a></li>
+          <li><a href="#">Comedy</a></li>
+          <li><a href="#">Magic</a></li>
+          <li><a href="#">Dance</a></li>
+          <li><a href="#">Circus</a></li>
+        </ul>
         </li>
          <li>
         <a href="#" style="color:; background-color:;" ><h4>Sports</h4></a>
@@ -84,15 +92,17 @@
       </div>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> User Log In</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Log In</a></li>
       </ul>
     </div>
    </div>
   </nav> 
 
+  <br><hr>
+
  <div class="header_bottom">
 
-        <img src="icon.jpg" alt="no icon" align="right" style="width: 10% ; height: 10% ;">
+        <img src="icon.jpg" alt="no icon" align="right" width= "15%" height="150">
         <div class="logo_area"><a class="logo" href="#"><b>T</b>he News World <span><b>It's Time To Get Connected...</b></span></a>
 
 
@@ -113,12 +123,12 @@
         
        <ul class="nav navbar-nav navbar-left">
       <li> <p style="text-decoration-color: blue"><h4>Latest News<i class="glyphicon glyphicon-chevron-right"></i></h4></p></li>
-        <li><a href="#"><span class="glyphicon glyphicon-record"></span> My First News Item</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-record"></span>My Second News Item</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-record"></span>My Third News Item</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-record"></span>My Four News Item</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-record"></span>My Five News Item</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-record"></span>My Six News Item</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-record"></span><strong> My First News Item</strong></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-record"></span><strong>My Second News Item</strong></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-record"></span><strong> My Third News Item</strong></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-record"></span><strong>My Four News Item</strong></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-record"></span><strong>My Five News Item</strong></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-record"></span><strong>My Six News Item</strong></a></li>
 
       
       </ul>
@@ -134,11 +144,11 @@
     <div class="col-sm-4 col-md-4 col-lg-4" >
 
       <div class="container-fluid">
-      <img src="news.jpg" alt="Norway" style="width:110%; height: 100%; " align="">
-      <div class="top-right"><p style="color: red"><b>Views<i class="glyphicon glyphicon-eye-open"></i></b></p>
-      <p style="color: red"><b><a href="#" style="color: red">Comments</a><i class="glyphicon glyphicon-comment"></i></b></p></div>
+      <img src="news.jpg" alt="Norway" width="100%" height="300" " align="">
+      <div class="top-right"><p style="color:red"><strong>Views<i class="glyphicon glyphicon-eye-open"></i></strong></p>
+      <p style="color:red"><strong><a href="#" style="color:red">9 &nbsp; Comments</a><i class="glyphicon glyphicon-comment"></i></strong></p></div>
 
-      <div class="centered"><h4 style="color: red"> <a href="#" style="color: red"><b> Amazing Movie posters &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;of all timesS </b></h4></a>
+      <div class="centered"><h4 style="color:#0CBD0D"> <a href="#" style="color:#0CBD0D"><b> Amazing Movie posters &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;of all timesS </b></h4></a>
         
       </div>
 
@@ -146,36 +156,236 @@
         </div>
         </div>
 <div class="col-sm-4 col-md-4 col-lg-4" >
-       <div class="container-fluid">
-       <img src="news.jpg" alt="Norway" style="width:110%; height: 100%; " align="">
-      <div class="top-right"><p style="color: red"><b>Views<i class="glyphicon glyphicon-eye-open"></i></b></p>
-      <p style="color: red"><b><a href="#" style="color: red">Comments</a><i class="glyphicon glyphicon-comment"></i></b></p></div>
 
-      <div class="centered"><h4 style="color: red"> <a href="#" style="color: red"><b> Amazing Movie posters &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;of all timesS </b></h4></a>
+       <div class="container-fluid">
+       <img src="news1.jpg" alt="Norway" width="100%" height="300" " align="">
+      <div class="top-right"><p style="color: red"><strong>Views<i class="glyphicon glyphicon-eye-open"></i></strong></p>
+      <p style="color: red"><strong><a href="#" style="color: red">10 &nbsp; Comments</a><i class="glyphicon glyphicon-comment"></i></strong></p></div>
+
+      <div class="centered"><h4 style="color:#0CBD0D"> <a href="#" style="color:#0CBD0D"><b> Amazing Movie posters &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;of all timesS </b></h4></a>
         
       </div>
         </div>
         </div>
     <div class="col-sm-4 col-md-4 col-lg-4" >
+
      <div class="container-fluid">
       
-       <img src="news.jpg" alt="Norway" style="width:107%; height:; " align="">
+       <img src="news2.jpg" alt="Norway" width="100%" height="300" " align="">
       <div class="top-right"><p style="color: red"><b>Views<i class="glyphicon glyphicon-eye-open"></i></b></p>
-      <p style="color: red"><b><a href="#" style="color: red">Comments</a><i class="glyphicon glyphicon-comment"></i></b></p></div>
+      <p style="color: red"><b><a href="#" style="color: red">12 &nbsp; Comments</a><i class="glyphicon glyphicon-comment"></i></b></p></div>
 
-      <div class="centered"><h4 style="color: red"> <a href="#" style="color: red"><b> Amazing Movie posters &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;of all timesS </b></h4></a>
+      <div class="centered"><h4 style="color:#0CBD0D"> <a href="#" style="color:#0CBD0D"><b> Amazing Movie posters &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;of all timesS </b></h4></a>
         
       </div>
+    </div>
+   </div>
+   </div>
+ </div>
 
-        
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12" >
+      <div style="border-style: dotted solid dashed double;">
+      <a href="#"><h2 align="center" style="font-family:georgia;"><strong>POPULAR POSTS</strong></h2></a>
 
 
-   
+      <div class="container-fluid">
+      <div class="col-sm-2">
+        <div style="border-style: dotted solid dashed double;">
+        <img src="phn.jpg" alt="no image" style="width:48%; height: ">
+         <img src="phn.jpg" alt="no image" style="width:48%; height: ">
+         <br>
+         <br>
+         <a href="#"><b><u style="color: red"> ONE PLUS INDIA LAUCNCH ON MAY 17 </u></b></a>
+
         </div>
-        </div>
+      </div> 
+      
 
+
+      
+      <div class="col-sm-2">
+        <div style="border-style: dotted solid dashed double;">
+        <img src="phn.jpg" alt="no image" style="width:48%; height: ">
+         <img src="phn.jpg" alt="no image" style="width:48%; height: ">
+         <br>
+         <br>
+         <a href="#"><b><u style="color: red"> ONE PLUS INDIA LAUCNCH ON MAY 17 </u></b></a>
+
+        </div>
+      </div>
+      
+
+      <div class="col-sm-2">
+        <div style="border-style: dotted solid dashed double;">
+        <img src="phn.jpg" alt="no image" style="width:48%; height: ">
+         <img src="phn.jpg" alt="no image" style="width:48%; height: ">
+         <br>
+         <br>
+         <a href="#"><b><u style="color: red"> ONE PLUS INDIA LAUCNCH ON MAY 17 </u></b></a>
+
+        </div>
+      </div> 
+      
+
+
+      
+      <div class="col-sm-2">
+        <div style="border-style: dotted solid dashed double;">
+        <img src="phn.jpg" alt="no image" style="width:48%; height: ">
+         <img src="phn.jpg" alt="no image" style="width:48%; height: ">
+         <br>
+         <br>
+         <a href="#"><b><u style="color: red"> ONE PLUS INDIA LAUCNCH ON MAY 17 </u></b></a>
+
+        </div>
+      </div> 
+
+       <div class="col-sm-2">
+        <div style="border-style: dotted solid dashed double;">
+        <img src="phn.jpg" alt="no image" style="width:48%; height: ">
+         <img src="phn.jpg" alt="no image" style="width:48%; height: ">
+         <br>
+         <br>
+         <a href="#"><b><u style="color: red"> ONE PLUS INDIA LAUCNCH ON MAY 17 </u></b></a>
+
+        </div>
+      </div> 
+
+       <div class="col-sm-2">
+        <div style="border-style: dotted solid dashed double;">
+        <img src="phn.jpg" alt="no image" style="width:48%; height: ">
+         <img src="phn.jpg" alt="no image" style="width:48%; height: ">
+         <br>
+         <br>
+         <a href="#"><b><u style="color: red"> ONE PLUS INDIA LAUCNCH ON MAY 17  </u></b></a>
+
+        </div>
+      </div> 
+
+      </div>
 
       </div>
     </div>
+   </div>
+  </div>    
+
+<div id="preloader">
+  <div id="status">&nbsp;</div>
+</div>
+
+ <div class="container-fluid">
+ <div class="col-sm-9 col-md-9 col-lg-9">
+
+  <div class="column">
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+
+   
+            <h4><span><h4 style="color: #0CBD0D"><u><b>Technology </u>&nbsp; &nbsp; &nbsp; &nbsp;<i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i></b></h4></span></h4>
+            <img src="robot.png" alt="no image" width="100%" height="200">
+            <hr>
+            <ul>
+              <li><a href="#">Scientists use inkjet printing to produce solar cells</a></li><hr>
+              <li><a href="#">iPhone 5 delay, Android fears drag Apple stock</a></li><hr>
+              <li><a href="#">Panasonic unveils stereo headset</a></li><hr>
+              <li><a href="#">Google Chrome OS has security holes</a></li><hr>
+              <li><a href="#">Nokia shuts down online stores</a></li><hr>
+            </ul>
+      </div>
+      </div>
+
+        <div class="column">
+            <div class="col-sm-4 col-md-4 col-lg-4" >
+
+            <h4><span><h4 style="color: #0CBD0D"><u><b> Hot on Web </u>&nbsp; &nbsp; &nbsp; &nbsp;<i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i></b></h4></span></h4>
+            <img src="ipad.jpg" alt="no image" width="100%" height="200">
+            <ul>
+              <li><a href="#">Google Launches Its Google+ Social Networking Service</a></li><hr>
+              <li><a href="#">World of Warcraft offered 'free'</a></li><hr>
+              <li><a href="#">Skype rolls out free app for Android phones</a></li><hr>
+              <li><a href="#">PayPal Predicts The End of the Wallet By 2015</a></li><hr>
+              <li><a href="#">Apple iPad now has over 100,000 apps</a></li><hr>
+            </ul>
+          </div>
+        </div>
+          <div class="column">
+              <div class="col-sm-4 col-md-4 col-lg-4" >
+
+            <h4><span><h4 style="color: #0CBD0D"><u><b>Entertainment </u> &nbsp; &nbsp; &nbsp; &nbsp;<i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i></b></h4></span></h4>
+             <img src="beauty.jpg" alt="no image" width="100%" height="200">
+            <ul>
+              <li><a href="#">Spacey's Richard III wows critics</a></li><hr>
+              <li><a href="#">Maria Sharapova returns to Wimbledon final</a></li><hr>
+              <li><a href="#">Beyonce's debut brings curtain down on Glastonbury</a></li><hr>
+              <li><a href="#">Mike Tyson in Big Brother?</a></li><hr>
+              <li><a href="#">Justin Timberlake to promote MySpace</a></li><hr>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+  <div class="col-sm-3 col-md-3 col-lg-3">
+
+    <h3 style="color:  #0CBD0D ;" align="center"><strong><u> Today's Poll Question </u></strong></h3>
+             <br>
+             <strong>&nbsp; The Democratic and Republican parties will hold their primaries for state and local officies in a few weeks. Looking ahead to the March primaries, how likely are you to vote in that election? Are you</strong>
+             <br>
+             <br>
+             <img src="elections.png" alt="no image" width="100%" height="200">
+             <br>
+             <br>
+              <form>
+                <input type="radio" name="vote" value="option1" checked> Certain To Vote<br><br>
+                <input type="radio" name="vote" value="option2"> Likely Will Vote <br><br>
+                <input type="radio" name="vote" value="option3">Probably Won't Vote <br><br>
+                <input type="radio" name="vote" value="option3">Skip the Primary Election <br><br>
+                <input type="radio" name="vote" value="option3">Dont't Know<br><br>
+                <input type="radio" name="vote" value="option3">Refused<br><br>
+
+              </form>
+              <div align="center">
+              <button type="button" class="btn btn-primary"> Answer</button>
+             </div>
+             <br>
+  </div>
+ </div>
+<div class="container-fluid">
+ <div class="col-sm-9 col-md-9 col-lg-9">
+     <h4><span><h4 style="color: #0CBD0D"><u><b>Some more posts </u>&nbsp; &nbsp; &nbsp; &nbsp;<i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i></b></h4></span></h4>  
+     <hr>
+
+    <div class="col-sm-6 col-md-6 col-lg-6">
+
+    <a href="#"><h4>US Secret Service probes "Obama's assassination" on Twitter</h4></a>
+    <hr>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+       <img src="obama.jpg" alt="no image" width="100%" height="125">
+    </div>
+    <div class="col-sm-8 col-md-8 col-lg-8">     
+    <p>Obama was born in 1961 in Honolulu, Hawaii, two years after the territory was admitted to the Union as the 50th state. Raised largely in Hawaii, Obama also spent one year of his childhood in Washington State and four years in Indonesia. After.... &nbsp; &nbsp;&nbsp;&nbsp; <a href="#">More</a></p>
+    </div>
+       <p> <span class="glyphicon glyphicon-eye-open"></span><strong>Views <span class="badge">8</span></strong> &nbsp;&nbsp;&nbsp;&nbsp; <span class="glyphicon glyphicon-thumbs-up"></span><strong>Likes</strong> <span class="badge">5</span>  &nbsp;&nbsp;&nbsp;&nbsp; <strong>Comments </strong><span class="badge">1</span> </p>
+
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-6">
+
+    <a href="#"><h4>Djokovic beats Nadal to win maiden Wimbledon title</h4></a>
+    <br>
+    <hr>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+       <img src="djokovic.jpg" alt="no image" width="100%" height="125">
+    </div>
+    <div class="col-sm-8 col-md-8 col-lg-8">     
+    <p>Djokovic has won 12 Grand Slam singles titles, five ATP Finals titles, 30 Masters 1000 series titles, 12 ATP World Tour 500 tournaments, and has held the No. 1 spot in the ATP rankings for a total of 223 weeks. In majors, Djokovic has won six... &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">More</a></p>
+    </div>
+       <p> <span class="glyphicon glyphicon-eye-open"></span><strong>Views <span class="badge">4</span></strong> &nbsp;&nbsp;&nbsp;&nbsp; <span class="glyphicon glyphicon-thumbs-up"></span><strong>Likes</strong> <span class="badge">4</span>  &nbsp;&nbsp;&nbsp;&nbsp; <strong>Comments </strong><span class="badge">2</span> </p>
+
+    </div>
+
+
+ </div>
+</div>
+
  </body>
 </html>
