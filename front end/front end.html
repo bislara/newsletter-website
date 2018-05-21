@@ -30,7 +30,84 @@
     transform: translate(-50%, -50%);
 }
 
+.month {
+    padding: 40px 10px;
+    width: 100%;
+    background: #082843;
+    text-align: center;
 }
+
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.month .prev {
+    float: left;
+    padding-top: 15px;
+}
+
+.month .next {
+    float: right;
+    padding-top: 15px;
+}
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ddd;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
+}
+
+.days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.days li {
+    
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:15px;
+    color: #777;
+}
+
+.days li .active {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important
+}
+
+/* Add media queries for smaller screens */
+@media screen and (max-width:900px) {
+    .weekdays li, .days li {width: 13.1%;}
+}
+
+@media screen and (max-width: 420px) {
+    .weekdays li, .days li {width: 12.5%;}
+    .days li .active {padding: 2px;}
+}
+
+@media screen and (max-width: 290px) {
+    .weekdays li, .days li {width: 12.2%;}
+}
+
   </style>
  </head>
  <body>
@@ -543,15 +620,122 @@
  <div class="col-sm-12 col-md-12 col-lg-12">
     <div class="column">
     <div class="col-sm-4 col-md-4 col-lg-4">
-      <h3><strong> About us</strong></h3>
+    <div class="panel panel-default">
+        <div class="panel-body">
+      <h3 style="text-align: center; color: #082843;"><strong> About us</strong></h3>
+       
+      The website contains international news coverage, as well as British, entertainment, science, and political news. Many reports are accompanied by audio and video from the BBC's television and radio news services, while the latest TV and radio bulletins are also available to view or listen to on the site together with other current affairs programmes.<br>From 1998 to 2001 the site was named best news website at the BAFTA Interactive Entertainment Awards when the award category was withdrawn. It has previously won both the Judges' award and the People's Voice award for best news site at the annual Webby Awards.
+      </div>
+      </div>
+    </div>
+    </div>
+    <div class="column">
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+           <h3 style="text-align: center; color: #082843;"><strong> Quick Links</strong></h3>
+            <br>
+           <ul >
+            <li><a href="#">World news<br></a></li><br>
+           <li><a href="#"> Science<br></a></li><br>
+            <li><a href="#">Entertainment<br></a></li><br>
+            <li><a href="#">Technology<br></a></li><br>
+            <li><a href="#">Health<br></a></li><br>
+           <li><a href="#">Business<br></a></li><br>
+            <li><a href="#">Sports<br></a></li>
+          </ul>
 
-
+        </div>
+        </div>
     </div>
     </div>
 
+    <div class="column">
+    <div class="col-sm-4 col-md-4 col-lg-4">
 
+      <div class="month">      
+        <ul>
+          <li class="prev">&#10094;</li>
+          <li class="next">&#10095;</li>
+          <li>
+            June<br>
+            <span style="font-size:18px">2018</span>
+          </li>
+        </ul>
+      </div>
 
+        <ul class="weekdays">
+          <li>Mo</li>
+          <li>Tu</li>
+          <li>We</li>
+          <li>Th</li>
+          <li>Fr</li>
+          <li>Sa</li>
+          <li>Su</li>
+        </ul>
+
+        <ul class="days">  
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li><span class="active">10</span></li>
+          <li>11</li>
+          <li>12</li>
+          <li>13</li>
+          <li>14</li>
+          <li>15</li>
+          <li>16</li>
+          <li>17</li>
+          <li>18</li>
+          <li>19</li>
+          <li>20</li>
+          <li>21</li>
+          <li>22</li>
+          <li>23</li>
+          <li>24</li>
+          <li>25</li>
+          <li>26</li>
+          <li>27</li>
+          <li>28</li>
+          <li>29</li>
+          <li>30</li>
+          <li>31</li>
+        </ul>
+    </div>
+    </div>
  </div>
   </div>
+
+<br><br><br>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom" style="background-color:#082843">
+  <div class="container-fluid">
+
+  <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar1" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span> 
+              <span class="icon-bar"></span> 
+              <span class="icon-bar"></span> 
+              <span class="icon-bar"></span> 
+              </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar1" >
+    <ul class="nav navbar-nav" style="position: absolute;left: 30%;right:30%">
+      <li><a href="#" >Ask A Question</a></li>
+      <li><a href="#">Forum<span class="badge">new</span></a></li>
+      <li><a href="#">Feedback</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+    </div>
+  </div>
+</nav> 
+
+
  </body>
 </html>
