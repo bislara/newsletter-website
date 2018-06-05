@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="icon" href="icon1.jpg" type="image/icon">
+  <link rel="icon" href="<?php echo base_url("assets/images/icon1.jpg"); ?>" type="image/icon">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style >
@@ -124,15 +124,15 @@
               <span class="icon-bar"></span> 
               <span class="icon-bar"></span> 
               </button>
-        <a class="navbar-brand" href="#"><h4 style="color: #09F619 ;font-family:georgia;">THE NEWS WORLD</h4> </a>   
+        <a class="navbar-brand" href="<?php echo base_url(); ?>"><h4 style="color: #09F619 ;font-family:georgia;">THE NEWS WORLD</h4> </a>   
         
     </div>
     <div class="collapse navbar-collapse" id="myNavbar" >
       <ul class="nav navbar-nav">
 
-        <li class="active" ><a href="#" style="color:"><h4><span class="glyphicon glyphicon-home"></span>Home</h4></a></li>
+        <li class="active" ><a href="<?php echo base_url(); ?>" style="color:"><h4><span class="glyphicon glyphicon-home"></span>Home</h4></a></li>
         <li>
-        <a href="#" style="color:; background-color:;" ><h4>Technology</h4></a>
+        <a href="<?php echo base_url(); ?>/category" style="color:; background-color:;" ><h4>Technology</h4></a>
         </li>
          <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:; background-color:;" ><h4>Entertainment<span class="caret"></span></h4></a>
@@ -154,7 +154,7 @@
         <a href="#" style="color:; background-color:;" ><h4>Weather</h4></a>
         </li>
          <li>
-        <a href="#" style="color:; background-color:;" ><h4>Fashion</h4></a>
+        <a href="<?php echo base_url(); ?>users/register" style="color:; background-color:;" ><h4>Register</h4></a>
         </li>
 
 
@@ -170,7 +170,7 @@
       </div>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Log In</a></li>
+        <li><a href="<?php echo base_url(); ?>users/login"><span class="glyphicon glyphicon-user"></span> Log In</a></li>
       </ul>
     </div>
    </div>
@@ -180,14 +180,14 @@
 
  <div class="header_bottom">
 
-        <img src="icon.jpg" alt="no icon" align="right" width= "15%" height="150">
+        <img src="<?php echo base_url("assets/images/icon.jpg"); ?>" alt="no icon" align="right" width= "15%" height="150">
         <div class="logo_area"><a class="logo" href="#"><b>T</b>he News World <span><b>It's Time To Get Connected...</b></span></a>
 
 
  <div class="navbar-collapse collapse">
  <ul class="nav navbar-nav navbar-left">
       <li><a href="#"><p style="color: blue" >Advertising &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i class="glyphicon glyphicon-option-vertical"></i></p></a></li>
-      <li><a href="#"><p style="color: blue" >Popular posts &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i class="glyphicon glyphicon-option-vertical"></i></p></a></li>
+      <li><a href="<?php echo base_url(); ?>/posts"><p style="color: blue" >Popular posts &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i class="glyphicon glyphicon-option-vertical"></i></p></a></li>
       <li><a href="#"><p style="color: blue" >Featured posts &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i class="glyphicon glyphicon-option-vertical"></i></p></a></li>
       <li><a href="#"><p style="color: blue" >Photos &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i class="glyphicon glyphicon-option-vertical"></i></p></a></li>
       <li><a href="#"><p style="color: blue" >Videos </p></a></li>
@@ -201,7 +201,7 @@
         
        <ul class="nav navbar-nav navbar-left">
       <li> <p style="text-decoration-color: blue"><h4>Latest News<i class="glyphicon glyphicon-chevron-right"></i></h4></p></li>
-        <li><a href="#"><span class="glyphicon glyphicon-record"></span><strong> My First News Item</strong></a></li>
+        <li><a href="<?php echo base_url(); ?>/article"><span class="glyphicon glyphicon-record"></span><strong> My First News Item</strong></a></li>
         <li><a href="#"><span class="glyphicon glyphicon-record"></span><strong>My Second News Item</strong></a></li>
         <li><a href="#"><span class="glyphicon glyphicon-record"></span><strong> My Third News Item</strong></a></li>
         <li><a href="#"><span class="glyphicon glyphicon-record"></span><strong>My Four News Item</strong></a></li>
@@ -222,7 +222,7 @@
     <div class="col-sm-4 col-md-4 col-lg-4" >
 
       <div class="container-fluid">
-      <img src="news.jpg" alt="Norway" width="100%" height="300" " align="">
+      <img src="<?php echo base_url("assets/images/news.jpg"); ?>" alt="Norway" width="100%" height="300" " align="">
       <div class="top-right"><p style="color:red"><strong>Views<i class="glyphicon glyphicon-eye-open"></i></strong></p>
       <p style="color:red"><strong><a href="#" style="color:red">9 &nbsp; Comments</a><i class="glyphicon glyphicon-comment"></i></strong></p></div>
 
@@ -236,7 +236,7 @@
 <div class="col-sm-4 col-md-4 col-lg-4" >
 
        <div class="container-fluid">
-       <img src="news1.jpg" alt="Norway" width="100%" height="300" " align="">
+       <img src="<?php echo base_url("assets/images/news1.jpg"); ?>" alt="Norway" width="100%" height="300" " align="">
       <div class="top-right"><p style="color: red"><strong>Views<i class="glyphicon glyphicon-eye-open"></i></strong></p>
       <p style="color: red"><strong><a href="#" style="color: red">10 &nbsp; Comments</a><i class="glyphicon glyphicon-comment"></i></strong></p></div>
 
@@ -249,7 +249,7 @@
 
      <div class="container-fluid">
       
-       <img src="news2.jpg" alt="Norway" width="100%" height="300" " align="">
+       <img src="<?php echo base_url("assets/images/news2.jpg"); ?>" alt="Norway" width="100%" height="300" " align="">
       <div class="top-right"><p style="color: red"><b>Views<i class="glyphicon glyphicon-eye-open"></i></b></p>
       <p style="color: red"><b><a href="#" style="color: red">12 &nbsp; Comments</a><i class="glyphicon glyphicon-comment"></i></b></p></div>
 
@@ -271,8 +271,8 @@
       <div class="container-fluid">
       <div class="col-sm-2">
         <div style="border-style: dotted solid dashed double;">
-        <img src="phn.jpg" alt="no image" style="width:48%; height: ">
-         <img src="phn.jpg" alt="no image" style="width:48%; height: ">
+       <img src="<?php echo base_url("assets/images/phn.jpg"); ?>" alt="no image" style="width:48%; height: ">
+         <img src="<?php echo base_url("assets/images/phn.jpg"); ?>" alt="no image" style="width:48%; height: ">
          <br>
          <br>
          <a href="#"><b><u style="color: red"> ONE PLUS INDIA LAUCNCH ON MAY 17 </u></b></a>
@@ -285,8 +285,8 @@
       
       <div class="col-sm-2">
         <div style="border-style: dotted solid dashed double;">
-        <img src="phn.jpg" alt="no image" style="width:48%; height: ">
-         <img src="phn.jpg" alt="no image" style="width:48%; height: ">
+        <img src="<?php echo base_url("assets/images/phn.jpg"); ?>" alt="no image" style="width:48%; height: ">
+         <img src="<?php echo base_url("assets/images/phn.jpg"); ?>" alt="no image" style="width:48%; height: ">
          <br>
          <br>
          <a href="#"><b><u style="color: red"> ONE PLUS INDIA LAUCNCH ON MAY 17 </u></b></a>
@@ -297,8 +297,8 @@
 
       <div class="col-sm-2">
         <div style="border-style: dotted solid dashed double;">
-        <img src="phn.jpg" alt="no image" style="width:48%; height: ">
-         <img src="phn.jpg" alt="no image" style="width:48%; height: ">
+        <img src="<?php echo base_url("assets/images/phn.jpg"); ?>" alt="no image" style="width:48%; height: ">
+         <img src="<?php echo base_url("assets/images/phn.jpg"); ?>" alt="no image" style="width:48%; height: ">
          <br>
          <br>
          <a href="#"><b><u style="color: red"> ONE PLUS INDIA LAUCNCH ON MAY 17 </u></b></a>
@@ -311,8 +311,19 @@
       
       <div class="col-sm-2">
         <div style="border-style: dotted solid dashed double;">
-        <img src="phn.jpg" alt="no image" style="width:48%; height: ">
-         <img src="phn.jpg" alt="no image" style="width:48%; height: ">
+        <img src="<?php echo base_url("assets/images/phn.jpg"); ?>" alt=no image" style="width:48%; height: ">
+         <img src="<?php echo base_url("assets/images/phn.jpg"); ?>" alt="no image" style="width:48%; height: ">
+         <br>
+         <br>
+         <a href="#"><b><u style="color: red">ONE PLUS INDIA LAUCNCH ON MAY 17 </u></b></a>
+
+        </div>
+      </div> 
+
+       <div class="col-sm-2">
+        <div style="border-style: dotted solid dashed double;">
+        <img src="<?php echo base_url("assets/images/phn.jpg"); ?>" alt="no image" style="width:48%; height: ">
+         <img src="<?php echo base_url("assets/images/phn.jpg"); ?>" alt="no image" style="width:48%; height: ">
          <br>
          <br>
          <a href="#"><b><u style="color: red"> ONE PLUS INDIA LAUCNCH ON MAY 17 </u></b></a>
@@ -322,19 +333,8 @@
 
        <div class="col-sm-2">
         <div style="border-style: dotted solid dashed double;">
-        <img src="phn.jpg" alt="no image" style="width:48%; height: ">
-         <img src="phn.jpg" alt="no image" style="width:48%; height: ">
-         <br>
-         <br>
-         <a href="#"><b><u style="color: red"> ONE PLUS INDIA LAUCNCH ON MAY 17 </u></b></a>
-
-        </div>
-      </div> 
-
-       <div class="col-sm-2">
-        <div style="border-style: dotted solid dashed double;">
-        <img src="phn.jpg" alt="no image" style="width:48%; height: ">
-         <img src="phn.jpg" alt="no image" style="width:48%; height: ">
+        <img src="<?php echo base_url("assets/images/phn.jpg"); ?>" alt="no image" style="width:48%; height: ">
+         <img src="<?php echo base_url("assets/images/phn.jpg"); ?>" alt="no image" style="width:48%; height: ">
          <br>
          <br>
          <a href="#"><b><u style="color: red"> ONE PLUS INDIA LAUCNCH ON MAY 17  </u></b></a>
@@ -361,10 +361,10 @@
 
    
             <h4><span><h4 style="color: #0CBD0D"><u><b>Technology </u>&nbsp; &nbsp; &nbsp; &nbsp;<i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i></b></h4></span></h4>
-            <img src="robot.png" alt="no image" width="100%" height="200">
+            <img src="<?php echo base_url("assets/images/robot.png"); ?>" alt="no image" width="100%" height="200">
             <hr>
             <ul>
-              <li><a href="#">Scientists use inkjet printing to produce solar cells</a></li><hr>
+              <li><a href="<?php echo base_url(); ?>/article">Scientists use inkjet printing to produce solar cells</a></li><hr>
               <li><a href="#">iPhone 5 delay, Android fears drag Apple stock</a></li><hr>
               <li><a href="#">Panasonic unveils stereo headset</a></li><hr>
               <li><a href="#">Google Chrome OS has security holes</a></li><hr>
@@ -377,7 +377,7 @@
             <div class="col-sm-4 col-md-4 col-lg-4" >
 
             <h4><span><h4 style="color: #0CBD0D"><u><b> Hot on Web </u>&nbsp; &nbsp; &nbsp; &nbsp;<i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i></b></h4></span></h4>
-            <img src="ipad.jpg" alt="no image" width="100%" height="200">
+            <img src="<?php echo base_url("assets/images/ipad.jpg"); ?>" alt="no image" width="100%" height="200">
             <ul>
               <li><a href="#">Google Launches Its Google+ Social Networking Service</a></li><hr>
               <li><a href="#">World of Warcraft offered 'free'</a></li><hr>
@@ -391,7 +391,7 @@
               <div class="col-sm-4 col-md-4 col-lg-4" >
 
             <h4><span><h4 style="color: #0CBD0D"><u><b>Entertainment </u> &nbsp; &nbsp; &nbsp; &nbsp;<i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i><i class="glyphicon glyphicon-option-horizontal"></i></b></h4></span></h4>
-             <img src="beauty.jpg" alt="no image" width="100%" height="200">
+             <img src="<?php echo base_url("assets/images/beauty.jpg"); ?>" alt="no image" width="100%" height="200">
             <ul>
               <li><a href="#">Spacey's Richard III wows critics</a></li><hr>
               <li><a href="#">Maria Sharapova returns to Wimbledon final</a></li><hr>
@@ -411,7 +411,7 @@
              <strong>&nbsp; The Democratic and Republican parties will hold their primaries for state and local officies in a few weeks. Looking ahead to the March primaries, how likely are you to vote in that election? Are you</strong>
              <br>
              <br>
-             <img src="elections.png" alt="no image" width="100%" height="200">
+             <img src="<?php echo base_url("assets/images/elections.png"); ?>" alt="no image" width="100%" height="200">
              <br>
              <br>
               <form>
@@ -441,7 +441,7 @@
     <a href="#"><h4>US Secret Service probes "Obama's assassination" on Twitter</h4></a>
     <hr>
     <div class="col-sm-4 col-md-4 col-lg-4">
-       <img src="obama.jpg" alt="no image" width="100%" height="125">
+       <img src="<?php echo base_url("assets/images/obama.jpg"); ?>" alt="no image" width="100%" height="125">
     </div>
     <div class="col-sm-8 col-md-8 col-lg-8">     
     <p>Obama was born in 1961 in Honolulu, Hawaii, two years after the territory was admitted to the Union as the 50th state. Raised largely in Hawaii, Obama also spent one year of his childhood in Washington State and four years in Indonesia. After.... &nbsp; &nbsp;&nbsp;&nbsp; <a href="#">More</a></p>
@@ -455,7 +455,7 @@
     <br>
     <hr>
     <div class="col-sm-4 col-md-4 col-lg-4">
-       <img src="djokovic.jpg" alt="no image" width="100%" height="125">
+       <img src="<?php echo base_url("assets/images/djokovic.jpg"); ?>" alt="no image" width="100%" height="125">
     </div>
     <div class="col-sm-8 col-md-8 col-lg-8">     
     <p>Djokovic has won 12 Grand Slam singles titles, five ATP Finals titles, 30 Masters 1000 series titles, 12 ATP World Tour 500 tournaments, and has held the No. 1 spot in the ATP rankings for a total of 223 weeks. In majors, Djokovic has won six... &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">More</a></p>
@@ -467,7 +467,7 @@
     <a href="#"><h4>Baidu and Microsoft tie-up for English search in China</h4></a>
    <hr>
     <div class="col-sm-4 col-md-4 col-lg-4">
-       <img src="baidu.jpg" alt="no image" width="100%" height="150">
+       <img src="<?php echo base_url("assets/images/baidu.jpg"); ?>" alt="no image" width="100%" height="150">
     </div>
     <div class="col-sm-8 col-md-8 col-lg-8">
     <p>Software giant Microsoft Corp and Chinese online search titan Baidu are teaming up to advance technical development and adoption of autonomous driving worldwide, the two companies said on Tuesday.Their collaboration will form part of the initiatives under Baidu’s Project Apollo open autonomous driving platform, which the mainland internet company first unveiled in April.
@@ -509,7 +509,7 @@
     <div class="carousel-inner">
 
       <div class="item active">
-        <img src="nitr.jpg" alt="Nit Rourkela" width="100%"  >
+        <img src="<?php echo base_url("assets/images/nitr.jpg"); ?>" alt="Nit Rourkela" width="100%"  >
         <div class="carousel-caption">
           <h3>Nit Rourkela</h3>
           <p>Lovely Place</p>
@@ -517,7 +517,7 @@
       </div>
 
       <div class="item">
-        <img src="nitr2.jpg" alt="la" width="100%" >
+        <img src="<?php echo base_url("assets/images/nitr2.jpg"); ?>" alt="la" width="100%" >
         <div class="carousel-caption">
           <h3>LA</h3>
           <p>Cool Place</p>
@@ -525,7 +525,7 @@
       </div>
     
       <div class="item">
-        <img src="nitr3.jpg" alt="Main Building" width="100%" >
+        <img src="<?php echo base_url("assets/images/nitr3.jpg"); ?>" alt="Main Building" width="100%" >
         <div class="carousel-caption">
           <h3>Main Building</h3>
           <p>Superb PIc</p>
@@ -560,7 +560,7 @@
     <div class="panel panel-default">
     <div class="panel-body">
       <div class="col-sm-3 col-md-3 col-lg-3">
-      <img src="emma_watson.jpg" alt="no image" width="100%" height="75">
+      <img src="<?php echo base_url("assets/images/emma_watson.jpg"); ?>" alt="no image" width="100%" height="75">
       </div>
       <div class="col-sm-9 col-md-9 col-lg-9"> 
       <a href="#"> Emma Watson used doubles in the last potter film: Rupert Grint</a>
@@ -578,7 +578,7 @@
       <hr>
 
         <div class="col-sm-3 col-md-3 col-lg-3">
-      <img src="emma_watson.jpg" alt="no image" width="100%" height="75">
+      <img src="<?php echo base_url("assets/images/emma_watson.jpg"); ?>" alt="no image" width="100%" height="75">
       </div>
       <div class="col-sm-9 col-md-9 col-lg-9"> 
       <a href="#"> Emma Watson used doubles in the last potter film: Rupert Grint</a>
@@ -594,7 +594,7 @@
       <br>
       <hr>
       <div class="col-sm-3 col-md-3 col-lg-3">
-      <img src="emma_watson.jpg" alt="no image" width="100%" height="75">
+      <img src="<?php echo base_url("assets/images/emma_watson.jpg"); ?>" alt="no image" width="100%" height="75">
       </div>
       <div class="col-sm-9 col-md-9 col-lg-9"> 
       <a href="#"> Emma Watson used doubles in the last potter film: Rupert Grint</a>
@@ -606,7 +606,7 @@
       <p>
         <h3 style="color: blue"><strong>ASK A QUESTION</strong></h3>
     </p>
-    <img src="ask-question.jpg" width="100%">
+    <img src="<?php echo base_url("assets/images/ask-question.jpg");?>" width="100%">
     <br><br>
     <a href="#"><h4><strong>Acknowledging Queries: Ask a Question</strong></h4></a>
     <p>Read on to find out the replies to your queries provided by the authority itself.When you stop learning, stop listening, stop looking and stop  asking questions,then it is time to die. </p>
