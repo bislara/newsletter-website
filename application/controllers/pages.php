@@ -10,7 +10,7 @@
 
 			}
 
-
+			$data['posts'] = $this->post_model->get_posts();
 
 			$data['title'] = ucfirst($page);
 

@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['posts/admin/browse']='posts/browse';
 $route['posts/admin/add'] ='posts/right';
 $route['posts/admin/update'] ='posts/update';
-//$route['posts/admin/del'] ='posts/delete';
+$route['posts/ask-a-question'] ='posts/ask_a_question';
 $route['posts/(:any)']='posts/view/$1';
 $route['posts'] ='posts/index';
 $route['default_controller'] = 'pages/view';

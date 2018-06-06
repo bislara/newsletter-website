@@ -4,7 +4,7 @@
 
 		public function register(){
 			$data['title'] = 'Sign Up';
-
+			$data['posts'] = $this->post_model->get_posts();
 			$this->form_validation->set_rules('name', 'Name', 'required');
 			$this->form_validation->set_rules('username', 'Username', 'required|callback_check_username_exists');
 			$this->form_validation->set_rules('email', 'Email', 'required|callback_check_email_exists');
@@ -13,7 +13,7 @@
 
 			if($this->form_validation->run() === FALSE){
 
-				$this->load->view('templates/header');
+				$this->load->view('templates/header',$data);
 				$this->load->view('users/register', $data);
 				$this->load->view('templates/footer');
 
@@ -28,12 +28,12 @@
 		public function login(){
 
 			$data['title'] = 'Sign In';
-
+			$data['posts'] = $this->post_model->get_posts();
 			$this->form_validation->set_rules('username', 'Username', 'required');
 			$this->form_validation->set_rules('password', 'Password', 'required');
 			if($this->form_validation->run() === FALSE){
 
-				$this->load->view('templates/header');
+				$this->load->view('templates/header',$data);
 				$this->load->view('users/login', $data);
 				$this->load->view('templates/footer');
 

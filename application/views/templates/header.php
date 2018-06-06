@@ -211,12 +211,14 @@
        <ul class="nav navbar-nav navbar-left">
       <li> <p style="text-decoration-color: blue"><h4>Latest News<i class="glyphicon glyphicon-chevron-right"></i></h4></p></li>
         <li><a href="<?php echo base_url(); ?>/article"><span class="glyphicon glyphicon-record"></span><strong> My First News Item</strong></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-record"></span><strong>My Second News Item</strong></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-record"></span><strong> My Third News Item</strong></a></li>
+      <?php foreach($posts as $post) : ?>
+        
+        <li><a href="<?php echo site_url('/posts/'.$post['slug']);?>"><span class="glyphicon glyphicon-record"></span><strong><?php echo $post['title']; ?></strong></a></li>
+        <!--li><a href="#"><span class="glyphicon glyphicon-record"></span><strong> My Third News Item</strong></a></li>
         <li><a href="#"><span class="glyphicon glyphicon-record"></span><strong>My Four News Item</strong></a></li>
         <li><a href="#"><span class="glyphicon glyphicon-record"></span><strong>My Five News Item</strong></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-record"></span><strong>My Six News Item</strong></a></li>
-
+        <li><a href="#"><span class="glyphicon glyphicon-record"></span><strong>My Six News Item</strong></a></li-->
+      <?php endforeach; ?>
       
       </ul>
     

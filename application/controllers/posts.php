@@ -9,7 +9,7 @@
 
 			$data['posts'] = $this->post_model->get_posts();
 
-			$this->load->view('templates/header');
+			$this->load->view('templates/header',$data);
 
 			$this->load->view('posts/index', $data);
 
@@ -19,7 +19,7 @@
    	public function view($slug = NULL){ 
 
    		$data['post']  = $this->post_model->get_posts($slug);
-
+   		$data['posts'] = $this->post_model->get_posts();
    		$post_id = $data['post']['id'];
 		$data['comments'] = $this->Comment_model->get_comments($post_id);
 
@@ -28,7 +28,7 @@
    		}
    		$data['title']=$data['post']['title'];
 
-   		$this->load->view('templates/header');
+   		$this->load->view('templates/header',$data);
 
 		$this->load->view('posts/view', $data);
 
@@ -146,6 +146,20 @@
 
 			$this->session->set_flashdata('post_updated', 'Your post has been updated');
 			redirect('posts');
+		}
+
+		public function ask_a_question(){
+
+			/*if(!file_exists(APPPATH.'views/posts/'.$page.'.php')){
+				show_404();
+			}*/
+
+			$data['posts'] = $this->post_model->get_posts();
+			//$data['title'] = ucfirst($page);
+
+			$this->load->view('templates/header',$data);
+			$this->load->view('posts/ask-a-question',$data);
+			$this->load->view('templates/footer');
 		}
 		
  }
