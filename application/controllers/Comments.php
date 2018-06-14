@@ -3,6 +3,11 @@
 	class Comments extends CI_Controller{
 
 		public function create($post_id){
+
+			if(!$this->session->userdata('logged_in')){
+				redirect('users/login');
+			}
+
 			$data['posts'] = $this->post_model->get_posts();
 			$slug = $this->input->post('slug');
 

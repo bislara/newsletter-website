@@ -36,6 +36,8 @@
 				<input type="password" class="form-control" name="password2" placeholder="Confirm Password">
 			</div>
 			<button type="submit" class="btn btn-primary btn-block">Submit</button>
+			<br>
+			<p>Already a member,<a href="<?php echo base_url(); ?>users/login">Login Here</a></p>
 		</div>
 	</div>
 <?php echo form_close(); ?>

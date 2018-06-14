@@ -162,7 +162,8 @@
 
 
      </ul>
-      <form class="navbar-form navbar-right">
+     
+      <form class="navbar-form navbar-right" action="<?php echo site_url('posts/search');?>" method="post">
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search" name="search">
         <div class="input-group-btn">
@@ -172,6 +173,7 @@
         </div>
       </div>
       </form>
+    
       <ul class="nav navbar-nav navbar-right">
         <?php if(!$this->session->userdata('logged_in')) : ?>
         <li><a href="<?php echo base_url(); ?>users/login"><span class="glyphicon glyphicon-user"></span> Log In</a></li>
