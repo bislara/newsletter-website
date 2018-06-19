@@ -163,7 +163,8 @@
 
      </ul>
      
-      <form class="navbar-form navbar-right" action="<?php echo site_url('posts/search');?>" method="post">
+     <?= form_open('posts/search',['class'=>'navbar-form navbar-right','role'=>'search']) ?>
+      <!--form class="navbar-form navbar-right" action="<?php echo base_url('posts/search');?>" method="post"-->
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search" name="search">
         <div class="input-group-btn">
@@ -172,7 +173,8 @@
           </button>
         </div>
       </div>
-      </form>
+      <?= form_close(); ?>
+      <?= form_error('search',"<p class='navbar-text'>",'</p>') ?>
     
       <ul class="nav navbar-nav navbar-right">
         <?php if(!$this->session->userdata('logged_in')) : ?>

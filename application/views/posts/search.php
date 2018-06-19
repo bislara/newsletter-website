@@ -14,50 +14,17 @@
 <div class="post-body">
     <?php echo $post['body']; ?>
 </div>
-
-<hr>
-<h3>Comments</h3>
-<?php if($comments) : ?>
-s
-    <?php foreach($comments as $comment) : ?>
-
-        <div class="well">
-            <h5><?php echo $comment['body']; ?> [by <strong><?php echo $comment['name']; ?></strong>]</h5>
-        </div>
-    <?php endforeach; ?>
-<?php else : ?>
-    <p>No Comments To Display</p>
-<?php endif; ?>
-<?php endif; ?>
 <!--?php endforeach; ?-->
+<hr>
+
+<?php endif; ?>
 
 <hr>
-<div class="col-sm-6 col-md-6 col-lg-6" >
-<h3>Add Comment</h3>
 
-<?php echo validation_errors(); ?>
-<?php echo form_open('comments/create/'.$post['id']); ?>
+</div>
+</div>
+</div>
 
-    <div class="form-group">
-        <label>Name</label>
-        <input type="text" name="name" class="form-control">
-    </div>
-    <div class="form-group">
-        <label>Email</label>
-        <input type="text" name="email" class="form-control">
-    </div>
-    <div class="form-group">
-        <label>Body</label>
-        <textarea name="body" class="form-control"></textarea>
-    </div>
-    <input type="hidden" name="slug" value="<?php echo $post['slug']; ?>">
-    <button class="btn btn-primary" type="submit">Submit</button>
-</form>
-</div>
-</div>
-</div>
-</div>
-<!--?php endif; ?-->
 
 
 <div class="col-sm-4 col-md-4 col-lg-4" >

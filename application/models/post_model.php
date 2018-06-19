@@ -87,12 +87,12 @@
 
         public function search($key){
 
-		        $this->db->like('title', $key);
+		        $query=$this->db->from('posts')->like('title', $key)->get();
 
 
 		        //$query = $this->db->get_where('posts', array('slug' => $key));
    		        //return $query->row_array();
-		        $query = $this->db->get('posts');
+		        //$query = $this->db->get('posts');
 		        return $query->result();
 		    }
 

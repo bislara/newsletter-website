@@ -1,32 +1,23 @@
-<h3 style="text-align: center; color:  #0CBD0D ;"><mark><?= $title?></mark></h3>
 
 <div class="container-fluid">
     <div class="row">
     <div class="col-sm-8 col-md-8 col-lg-8" >
-    <div class="panel panel-default">
-        <div class="panel-body">
-<?php foreach($posts as $post) : ?>
-	
-	<h3 style="font-family: courier;"><strong><?php echo $post['title']; ?></strong></h3><br>
-	
-	<small class="post-date">Posted on <?php echo $post['created_at'];?> <!--strong><h4><?php echo $post['name']; ?></h4></strong--> </small><br>
-	<img width="50%" src="<?php echo site_url(); ?>assets/images/<?php echo $post['post_image'];?>"><br>
-	<br>
-	<?php echo word_limiter( $post['body'],50);?>
-	<br><br>
-	<p><a href="<?php echo site_url('/posts/'.$post['slug']);?>">Read More..</a></p>
-	<br><br><hr>
+    	
 
-<?php endforeach; ?>
-<div class="pagination-link" align="right">
-		<?php echo $this->pagination->create_links(); ?>
-</div>
+        <h3 style="text-align: left; color:  #0CBD0D ;"><mark><?php echo $post['title']; ?></mark></h3>
+        <br>
+        <small class="post-date">
+            Posted on: <?php echo $post['created_at']; ?><br>
+            <strong><h4>By : <?php echo $post['username']; ?></h4></strong>
+        </small><br>
+        
+        <div class="post-body">
+            <?php echo $post['body']; ?>
+        </div>
 
-</div>
-</div>
-</div>
 
-    <div class="col-sm-4 col-md-4 col-lg-4" >
+    </div>
+	<div class="col-sm-4 col-md-4 col-lg-4" >
     	<div class="panel panel-default">
         <div class="panel-body">
 

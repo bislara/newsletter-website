@@ -170,16 +170,33 @@
 			$this->load->view('templates/footer');
 		}
 		
-	    public function search($slug=NULL){
+	    public function search($slug = NULL){
 
-		     $key = $this->input->post('title');
-		     $data['post']  = $this->post_model->get_posts($slug);
-		     $post['title'] = $this->post_model->search($key);
+	    	 $this->form_validation->set_rules('search', 'Search', 'required'); 
+
+	    	 if($this->form_validation->run() === FALSE){
+
+	    	 $this->index();
+	    	 }
+	    	 else{
+		     $key = $this->input->post('search');
+
+		   
 		     $data['posts'] = $this->post_model->get_posts();
+		     //$post['results'] = $this->post_model->search($key);
+   		     //$post_id = $data['post']['id'];
+   		     //$data['title']=$data['post']['title'];
+
+		     $this->load->model('post_model','posts');
+		     $articles=$this->posts->search($key);
+		     $data['post']  = $this->post_model->get_posts($slug);
+		     //$data['posts'] = $this->post_model->get_posts();
 
 		    $this->load->view('templates/header',$data);
-			$this->load->view('posts/search',$data,$post);
+			$this->load->view('posts/search',compact('articles'),$data);
 			$this->load->view('templates/footer');
-		   
+					   	
+		   	//print_r($key);
+		     }
 		    }
- }
+ 		}

@@ -1,32 +1,35 @@
-<h3 style="text-align: center; color:  #0CBD0D ;"><mark><?= $title?></mark></h3>
 
 <div class="container-fluid">
     <div class="row">
     <div class="col-sm-8 col-md-8 col-lg-8" >
-    <div class="panel panel-default">
-        <div class="panel-body">
-<?php foreach($posts as $post) : ?>
-	
-	<h3 style="font-family: courier;"><strong><?php echo $post['title']; ?></strong></h3><br>
-	
-	<small class="post-date">Posted on <?php echo $post['created_at'];?> <!--strong><h4><?php echo $post['name']; ?></h4></strong--> </small><br>
-	<img width="50%" src="<?php echo site_url(); ?>assets/images/<?php echo $post['post_image'];?>"><br>
-	<br>
-	<?php echo word_limiter( $post['body'],50);?>
-	<br><br>
-	<p><a href="<?php echo site_url('/posts/'.$post['slug']);?>">Read More..</a></p>
-	<br><br><hr>
+    	<h3 style="text-align: center; color:  #0CBD0D ;"><mark><?= $title?></mark></h3>
 
-<?php endforeach; ?>
-<div class="pagination-link" align="right">
-		<?php echo $this->pagination->create_links(); ?>
-</div>
+    	<br><br><br>
+    	<table class="table table-hover" style="border:4px solid green;">
+	    <thead>
+	      <tr class="info">
+	        <th><h3>Title</h3></th>
+	        <th><h3>Replies</h3></th>
+	        <th><h3>Last Post</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	    	<?php foreach($forum as $post) : ?>
+	      <tr>
+	        <td><a href="<?php echo site_url('/forum/'.$post['slug']);?>"><h4 style="font-family: courier;"><strong><?php echo $post['title']; ?></strong></h4></a></td>
+	        <td><?php echo $post['id'];?></td>
+	        <td>
+	        	<?php echo $post['created_at'];?><br>
+	        	<?php echo $post['username'];?>
+	        </td>
+	      </tr>
+	      <?php endforeach; ?>
+	    </tbody>
+	  	</table>
 
-</div>
-</div>
-</div>
 
-    <div class="col-sm-4 col-md-4 col-lg-4" >
+    </div>
+	<div class="col-sm-4 col-md-4 col-lg-4" >
     	<div class="panel panel-default">
         <div class="panel-body">
 
