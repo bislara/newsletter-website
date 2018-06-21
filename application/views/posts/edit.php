@@ -31,8 +31,9 @@
           <?php endforeach; ?>
       </select>
   </div>
-
+    <div align="center">
     <button type="submit" class="btn btn-default">Submit</button>
+    </div>
 </form>
     
 	

@@ -16,16 +16,47 @@
 		}
 		public function view($slug = NULL){ 
 
-   		$data['post']  = $this->forum_model->get_forum($slug);
-   		$data['posts'] = $this->post_model->get_posts();
-   		$post_id = $data['post']['id'];
-		//$data['comments'] = $this->Comment_model->get_comments($post_id);
+			$data['posts'] = $this->post_model->get_posts();
+	   		$data['post']  = $this->forum_model->get_forum($slug);
+	   		$forum_id = $data['post']['id'];
+	   		//print_r($forum_id);
+			$data['discuss'] = $this->discuss_model->get_discuss($forum_id);
 
-   		$data['title']=$data['post']['title'];
+	   		$data['title']=$data['post']['title'];
 
-   		$this->load->view('templates/header',$data);
-		$this->load->view('forum/view', $data);
-		$this->load->view('templates/footer');
+	   		$this->load->view('templates/header',$data);
+			$this->load->view('forum/view', $data);
+			$this->load->view('templates/footer');
 
-   	}
+   	    }
+
+   	    public function create(){
+
+			$data['posts'] = $this->post_model->get_posts();
+
+			$data['title'] = 'Create Forum';
+
+
+   			$this->form_validation->set_rules('title', 'Title', 'required');
+			$this->form_validation->set_rules('username', 'Name', 'required');
+			$this->form_validation->set_rules('body', 'Body', 'required');
+
+
+			if($this->form_validation->run() === FALSE){
+			
+			$this->load->view('templates/header',$data);
+			$this->load->view('forum/create',$data);
+			$this->load->view('templates/footer');
+				
+			}
+			 else 
+			{
+				$this->forum_model->create_forum();
+
+				$this->session->set_flashdata('forum_created', 'Your forum has been started');
+ 				
+   				redirect('forum');
+			}
+			
+		}
 	}

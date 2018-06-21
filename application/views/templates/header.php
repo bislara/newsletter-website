@@ -258,3 +258,7 @@
       <?php if($this->session->flashdata('user_loggedout')): ?>
         <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_loggedout').'</p>'; ?>
       <?php endif; ?>
+
+      <?php if($this->session->flashdata('forum_created')): ?>
+        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('forum_created').'</p>'; ?>
+      <?php endif; ?>

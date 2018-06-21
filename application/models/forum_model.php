@@ -17,11 +17,27 @@
 
 				$query = $this->db->get('forum');
 				return $query->result_array(); 
-   }
+            }
 
    //$this->db->join('categories', 'categories.id = posts.category_id');
       $query = $this->db->get_where('forum', array('slug' => $slug));
    		return $query->row_array();
    	}
+
+      public function create_forum(){
+
+         $slug = url_title($this->input->post('title'));
+
+         $data = array(
+
+            'title' => $this->input->post('title'),
+            'slug' => $slug,
+            'username'=>$this->input->post('username'),
+            'body' => $this->input->post('body')
+         );
+
+         return $this->db->insert('forum', $data);
+
+   }
 
    }

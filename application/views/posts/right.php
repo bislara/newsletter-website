@@ -34,8 +34,9 @@
 	  <input type="file" name="userfile" size="20">
   </div>
 
-
+    <div align="center">
     <button type="submit" class="btn btn-default">Submit</button>
+    </div>
 </form>
     
 	

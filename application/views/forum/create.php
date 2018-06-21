@@ -2,51 +2,39 @@
 <div class="container-fluid">
     <div class="row">
     <div class="col-sm-8 col-md-8 col-lg-8" >
-    	
+    	<h3 style="text-align: center; color:  #0CBD0D ;"><mark><?= $title?></mark></h3>
 
-        <h3 style="text-align: left; color:  #0CBD0D ;"><mark><?php echo $post['title']; ?></mark></h3>
-        <br>
-        <small class="post-date">
-            Posted on: <?php echo $post['created_at']; ?><br>
-            <strong><h4>Started by : <?php echo $post['username']; ?></h4></strong>
-        </small><br>
-        
-        <div class="post-body">
-            <?php echo $post['body']; ?>
-        </div>
-        <br><br><br>
-    <!--?php if($comments) : ?-->
+    	<?php echo validation_errors();?>
 
-    <?php foreach($discuss as $post) : ?>
+        <?php echo form_open('forum/create');?>
+            <div class="form-group">
 
-        <div class="well">
-          <h4><strong><?php echo $post['name']; ?></strong></h4>
-          <br><h5><?php echo $post['body']; ?></h5>
-        </div>
-    <?php endforeach; ?>
-        <!--?php else : ?-->
-            <p><h4>No Reply</h4></p>
-    <!--?php endif; ?-->
-    <hr>
-    <div class="col-sm-6 col-md-6 col-lg-6" >
-    <h3>Add Reply</h3>
+            <label>Title</label>
 
-    <?php echo validation_errors(); ?>
-    <?php echo form_open('discuss/create/'.$post['id']); ?>
+            <input type="text" class="form-control" name="title" placeholder="Add Title">
 
-        <div class="form-group">
+            </div>
+
+             <div class="form-group">
+
             <label>Name</label>
-            <input type="text" name="name" class="form-control">
-        </div>
-        <div class="form-group">
+
+            <input type="text" class="form-control" name="username" placeholder="Your Name">
+
+            </div>
+
+            <div class="form-group">
+
             <label>Body</label>
-            <textarea name="body" class="form-control"></textarea>
-        </div>
-        <input type="hidden" name="slug" value="<?php echo $post['slug']; ?>">
-        
-        <button class="btn btn-primary" type="submit">Submit</button>
-    </form>
-    </div>
+
+            <textarea id="editor1" class="form-control" name="body" placeholder="Add Body" rows="15"></textarea>
+
+            </div>
+            <div align="center">
+            <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+        </form>
+
 
     </div>
 	<div class="col-sm-4 col-md-4 col-lg-4" >

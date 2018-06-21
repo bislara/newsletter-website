@@ -4,7 +4,16 @@
     <div class="col-sm-8 col-md-8 col-lg-8" >
     	<h3 style="text-align: center; color:  #0CBD0D ;"><mark><?= $title?></mark></h3>
 
-    	<br><br><br>
+    	<br><br>
+        <?php if(!$this->session->userdata('logged_in')) : ?>
+        <h4><a href="<?php echo base_url(); ?>users/login"><span class="glyphicon glyphicon-user"></span> Log In</a> to start a new thread.</h4>
+        <?php endif; ?>
+        <br>
+        <br>
+        <?php if($this->session->userdata('logged_in')) : ?>
+          <h4><a href="<?php echo base_url(); ?>forum/create">Click Here</a> to create a new thread</h4>
+        <?php endif; ?>
+        <br><br>
     	<table class="table table-hover" style="border:4px solid green;">
 	    <thead>
 	      <tr class="info">
