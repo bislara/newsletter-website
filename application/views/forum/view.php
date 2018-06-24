@@ -17,11 +17,11 @@
         <br><br><br>
     <!--?php if($comments) : ?-->
 
-    <?php foreach($discuss as $post) : ?>
+    <?php foreach($comments as $comment) : ?>
 
         <div class="well">
-          <h4><strong><?php echo $post['name']; ?></strong></h4>
-          <br><h5><?php echo $post['body']; ?></h5>
+          <h4><strong><?php echo $comment['name']; ?></strong></h4>
+          <br><h5><?php echo $comment['body']; ?></h5>
         </div>
     <?php endforeach; ?>
         <!--?php else : ?-->
@@ -42,8 +42,8 @@
             <label>Body</label>
             <textarea name="body" class="form-control"></textarea>
         </div>
+
         <input type="hidden" name="slug" value="<?php echo $post['slug']; ?>">
-        
         <button class="btn btn-primary" type="submit">Submit</button>
     </form>
     </div>

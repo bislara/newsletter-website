@@ -12,6 +12,8 @@
 			$slug = $this->input->post('slug');
 
 			$data['post'] = $this->forum_model->get_forum($slug);
+			$forum_id = $data['post']['id'];
+			
 			$this->form_validation->set_rules('name', 'Name', 'required');
 			$this->form_validation->set_rules('body', 'Body', 'required');
 

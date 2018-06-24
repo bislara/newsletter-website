@@ -17,10 +17,11 @@
 		public function view($slug = NULL){ 
 
 			$data['posts'] = $this->post_model->get_posts();
+
 	   		$data['post']  = $this->forum_model->get_forum($slug);
 	   		$forum_id = $data['post']['id'];
 	   		//print_r($forum_id);
-			$data['discuss'] = $this->discuss_model->get_discuss($forum_id);
+			$data['comments'] = $this->discuss_model->get_discuss($forum_id);
 
 	   		$data['title']=$data['post']['title'];
 
