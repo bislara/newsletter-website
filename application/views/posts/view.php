@@ -21,7 +21,7 @@
 	<?php foreach($comments as $comment) : ?>
 
 		<div class="well">
-			<h5><?php echo $comment['body']; ?> [by <strong><?php echo $comment['name']; ?></strong>]</h5>
+		 <h5><?php echo $comment['body']; ?> [by <strong><?php echo $comment['name']; ?></strong>]</h5>
 		</div>
 	<?php endforeach; ?>
 <?php else : ?>

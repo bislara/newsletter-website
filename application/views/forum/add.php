@@ -26,7 +26,7 @@
 	    	<?php foreach($forum as $post) : ?>
 	      <tr>
 	        <td><a href="<?php echo site_url('/forum/'.$post['slug']);?>"><h4 style="font-family: courier;"><strong><?php echo $post['title']; ?></strong></h4></a></td>
-	        <td><?php echo $post['id'];?></td>
+	        <td><?php echo $count;?></td>
 	        <td>
 	        	<?php echo $post['created_at'];?><br>
 	        	<?php echo $post['username'];?>

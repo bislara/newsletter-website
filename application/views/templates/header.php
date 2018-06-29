@@ -178,7 +178,13 @@
     
       <ul class="nav navbar-nav navbar-right">
         <?php if(!$this->session->userdata('logged_in')) : ?>
-        <li><a href="<?php echo base_url(); ?>users/login"><span class="glyphicon glyphicon-user"></span> Log In</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Log In</a>
+          <ul class="dropdown-menu">
+          <li><a href="<?php echo base_url(); ?>users/login">As a user</a></li>
+          <li><a href="<?php echo base_url(); ?>admin/login">As a admin</a></li>
+        </ul>
+        </li>
         <?php endif; ?>
         <?php if($this->session->userdata('logged_in')) : ?>
           <li><a href="<?php echo base_url(); ?>users/logout">Logout</a></li>

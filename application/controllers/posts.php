@@ -47,8 +47,8 @@
    	public function right(){
 
 
-   		if(!$this->session->userdata('logged_in')){
-				redirect('users/login');
+   		if(!$this->session->userdata('logg_in')){
+				redirect('admin/login');
 			}
    		$data['title']='Create post';
 
@@ -88,11 +88,15 @@
 				$this->session->set_flashdata('post_created', 'Your post has been created');
  				//$this->load->view('posts/success');
    				redirect('posts');
-   	}
+   			}
 	}
 
 	public function browse(){ 
 
+		
+    	if(!$this->session->userdata('logg_in')){
+				redirect('admin/login');
+			}
 		$data['title'] = 'Latest Posts';
    		$data['posts']  = $this->post_model->get_posts();
 
@@ -112,8 +116,8 @@
     public function delete($id){
     		//echo $id;
 
-    	if(!$this->session->userdata('logged_in')){
-				redirect('users/login');
+    	if(!$this->session->userdata('logg_in')){
+				redirect('admin/login');
 			}
 		$this->post_model->delete_post($id);
 
@@ -125,8 +129,8 @@
 
 		public function edit($slug){
 
-			if(!$this->session->userdata('logged_in')){
-				redirect('users/login');
+			if(!$this->session->userdata('logg_in')){
+				redirect('admin/login');
 			}
 			$data['post'] = $this->post_model->get_posts($slug);
 		    $data['categories'] = $this->post_model->get_categories();
@@ -147,8 +151,8 @@
 
 		public function update(){
 
-			if(!$this->session->userdata('logged_in')){
-				redirect('users/login');
+			if(!$this->session->userdata('logg_in')){
+				redirect('admin/login');
 			}
 			$this->post_model->update_post();
 

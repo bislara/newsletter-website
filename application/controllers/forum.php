@@ -9,6 +9,8 @@
 			$data['title'] = 'Discussing Forum';
 			$data['forum']=$this->forum_model->get_forum();
 
+			$data['count']=0;
+			
 			$this->load->view('templates/header',$data);
 			$this->load->view('forum/add',$data);
 			$this->load->view('templates/footer');
@@ -21,7 +23,9 @@
 	   		$data['post']  = $this->forum_model->get_forum($slug);
 	   		$forum_id = $data['post']['id'];
 	   		//print_r($forum_id);
+	   		$data['count']=0;
 			$data['comments'] = $this->discuss_model->get_discuss($forum_id);
+			//print_r($data['count']);
 
 	   		$data['title']=$data['post']['title'];
 

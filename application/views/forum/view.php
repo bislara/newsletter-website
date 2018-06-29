@@ -15,20 +15,21 @@
             <?php echo $post['body']; ?>
         </div>
         <br><br><br>
-    <!--?php if($comments) : ?-->
+    <?php if($comments) : ?>
 
-    <?php foreach($comments as $comment) : ?>
+    <?php $count=0; foreach($comments as $comment) : ?>
 
         <div class="well">
           <h4><strong><?php echo $comment['name']; ?></strong></h4>
           <br><h5><?php echo $comment['body']; ?></h5>
         </div>
-    <?php endforeach; ?>
-        <!--?php else : ?-->
+    <?php $count++; endforeach; ?>
+        <?php else : ?>
             <p><h4>No Reply</h4></p>
-    <!--?php endif; ?-->
+    <?php endif; ?>
     <hr>
-    <div class="col-sm-6 col-md-6 col-lg-6" >
+    <?php echo $count; ?>
+    <div class="col-sm-8 col-md-8 col-lg-8" >
     <h3>Add Reply</h3>
 
     <?php echo validation_errors(); ?>
