@@ -27,6 +27,11 @@
    		return $query->row_array();
    	}
 
+   	public function featured_posts(){
+		$query=$this->db->get_where('posts',array('featured'=>1));
+		return $query->result_array();
+	}
+
    	public function create_post($post_image){
 
 			$slug = url_title($this->input->post('title'));
@@ -71,10 +76,25 @@
 				//'post_image'=>$this->input->post('post_iamge')
 
 			);
-
 			$this->db->where('id', $this->input->post('id'));
 			return $this->db->update('posts', $data);
 		}
+
+	public function increase_views($id){
+
+		$this->db->where('id', $id);
+
+		$this->db->set('views', 'views+1', FALSE);
+		return $this->db->update('posts');
+		
+		}
+
+		public function getposts_by_id($id){
+		
+		$query=$this->db->get_where('posts',array('id'=>$id));
+		return $query->row_array();
+		
+		}	
 
 
 		public function get_categories(){

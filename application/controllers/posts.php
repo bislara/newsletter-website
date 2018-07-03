@@ -24,6 +24,24 @@
 			$this->load->view('templates/footer');
    	}
 
+   	public function featured()
+   	{
+   		$data['posts']=$this->post_model->featured_posts();
+
+   		$data['title'] = 'Featured Posts';
+ 
+   		if (empty($data['posts'])) {
+   			show_404();
+   		}
+
+   		$this->load->view('templates/header',$data);
+
+		$this->load->view('posts/featured', $data);
+
+		$this->load->view('templates/footer');
+
+   	}
+
    	public function view($slug = NULL){ 
 
    		$data['post']  = $this->post_model->get_posts($slug);
@@ -35,6 +53,8 @@
    			show_404();
    		}
    		$data['title']=$data['post']['title'];
+
+   		$data['views']=$this->post_model->increase_views($data['post']['id']);
 
    		$this->load->view('templates/header',$data);
 
@@ -159,6 +179,7 @@
 			$this->session->set_flashdata('post_updated', 'Your post has been updated');
 			redirect('posts');
 		}
+
 
 		public function ask_a_question(){
 

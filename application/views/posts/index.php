@@ -14,7 +14,9 @@
 	<br>
 	<?php echo word_limiter( $post['body'],50);?>
 	<br><br>
-	<p><a href="<?php echo site_url('/posts/'.$post['slug']);?>">Read More..</a></p>
+	<p><a href="<?php echo site_url('/posts/'.$post['slug']);?>">Read More..</a>
+        <!--a href="<?php echo site_url('/api/post/get/'.$post['slug']);?>">Read More..</a-->
+    </p>
 	<br><br><hr>
 
 <?php endforeach; ?>
