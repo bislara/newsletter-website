@@ -205,7 +205,7 @@
 
  <div class="navbar-collapse collapse">
  <ul class="nav navbar-nav navbar-left">
-      <li><a href="#"><p style="color: blue" >Advertising &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i class="glyphicon glyphicon-option-vertical"></i></p></a></li>
+      <li><a href="<?php echo base_url(); ?>categories"><p style="color: blue" >Categories &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i class="glyphicon glyphicon-option-vertical"></i></p></a></li>
       <li><a href="<?php echo base_url(); ?>posts"><p style="color: blue" >Popular posts &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i class="glyphicon glyphicon-option-vertical"></i></p></a></li>
       <li><a href="<?php echo base_url(); ?>posts/featured"><p style="color: blue" >Featured posts &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i class="glyphicon glyphicon-option-vertical"></i></p></a></li>
       <li><a href="#"><p style="color: blue" >Photos &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i class="glyphicon glyphicon-option-vertical"></i></p></a></li>
