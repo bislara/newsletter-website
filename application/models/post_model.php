@@ -15,8 +15,8 @@
    			
 			if($slug == FALSE){
 
-				$this->db->order_by('id', 'DESC');
-				//$this->db->join('categories', 'categories.id = posts.category_id');
+				$this->db->order_by('posts.id', 'DESC');
+				$this->db->join('categories', 'categories.id = posts.category_id');
 
 				$query = $this->db->get('posts');
 				return $query->result_array(); 
@@ -27,7 +27,14 @@
    		return $query->row_array();
    	}
 
-   	public function featured_posts(){
+   	public function featured_posts($limit = FALSE, $offset = FALSE){
+
+   		if($limit){
+				$this->db->limit($limit, $offset);
+			}
+
+		$this->db->order_by('id', 'DESC');
+
 		$query=$this->db->get_where('posts',array('featured'=>1));
 		return $query->result_array();
 	}
@@ -61,7 +68,7 @@
 
 		}
 
-	public function update_post(){
+	public function update_post($post_image){
 
 			$slug = url_title($this->input->post('title'));
 			$data = array(
@@ -73,7 +80,8 @@
 				'body' => $this->input->post('body'),
 
 				'category_id' => $this->input->post('category_id'),
-				//'post_image'=>$this->input->post('post_iamge')
+
+				'post_image'=>$post_image
 
 			);
 			$this->db->where('id', $this->input->post('id'));

@@ -21,10 +21,8 @@
       {
          $this->output->set_content_type(' application/json ');
          $response['jsonResponse']=json_encode($data);
-         
-        // $this->load->view('templates/header',$response);
+      
          $this->load->view('api/getPostByname', $response);
-         //$this->load->view('templates/footer');
       }
 
       public function getPost_id($id)
@@ -59,13 +57,18 @@
          $this->load->view('api/getComments', $response);
       }
 
-      public function Comment_submit($post_id){
+      public function Comment_submit(){
+            
+            $data = array(
 
-         if(!$this->session->userdata('logged_in')){
-            redirect('users/login');
-         }
-
-            $return=$this->Comment_model->create_comment($post_id);
+            'post_id' => $this->input->post('post_id'),
+            'name' => $this->input->post('name'),
+            'email' => $this->input->post('email'),
+            'body' => $this->input->post('body')
+         );
+         
+            $return = $this->Comment_model->create_comment_api($data);
+            
             $response['jsonResponse']=json_encode($return);
              $this->load->view('api/getComments', $response);
       }
@@ -95,7 +98,7 @@
          
             $username = $this->input->post('username');
             $password = md5($this->input->post('password'));
-            $user_id = $this->User_model->login($username, $password);
+            $user_id = $this->User_model->login_api($username, $password);
                
             $user_data = array(
 
@@ -104,9 +107,9 @@
                   'logged_in' => true
                );
 
-               $this->session->set_userdata($user_data);
+               //$this->session->set_userdata($user_data);
             
-              $response['jsonResponse']=json_encode($user_id);
+            $response['jsonResponse']=json_encode($user_data);
             $this->load->view('api/getComments', $response);
          }
 

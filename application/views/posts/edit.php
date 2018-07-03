@@ -5,7 +5,7 @@
 
 <?php echo validation_errors();?>
 
-<?php echo form_open('posts/admin/update');?>
+<?php echo form_open_multipart('posts/admin/update');?>
    <input type="hidden" name="id" value="<?php echo $post['id']; ?>">
 	<div class="form-group">
 
@@ -30,6 +30,11 @@
             <option value="<?php echo $category['id']; ?>"><?php echo $category['name']; ?></option>
           <?php endforeach; ?>
       </select>
+  </div>
+
+  <div class="form-group">
+    <label>Upload Image</label>
+    <input type="file" name="userfile" size="20">
   </div>
     <div align="center">
     <button type="submit" class="btn btn-default">Submit</button>

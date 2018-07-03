@@ -51,13 +51,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['api/post/get/(:any)'] = 'api/getPostByname/$1';
 $route['api/post/get/comments/(:any)'] = 'api/getComments/$1';
-$route['api/post/submit/comments/(:num)'] = 'api/Comment_submit/$1';
+$route['api/post/submit/comments'] = 'api/Comment_submit';
 $route['api/signin'] = 'api/signin';
 $route['api/featured']='api/featured_post';
 $route['api/post/get/(:any)']='api/getPost_id/$1';
 
 
 
+$route['admin/comments']='posts/comments';
 $route['admin/login'] ='admin_user/login';
 $route['admin/register'] ='admin_user/register';
 $route['forum/create']='forum/create';
@@ -74,6 +75,7 @@ $route['posts/(:any)']='posts/view/$1';
 $route['posts'] ='posts/index';
 $route['default_controller'] = 'pages/view';
 $route['first'] = 'welcome/home/$1';
+$route['(:any)/(:any)']='pages/view/$1/$2';
 $route['(:any)']='pages/view/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

@@ -9,7 +9,7 @@
 	
 	<h3 style="font-family: courier;"><strong><?php echo $post['title']; ?></strong></h3><br>
 	
-	<small class="post-date">Posted on <?php echo $post['created_at'];?> <!--strong><h4><?php echo $post['name']; ?></h4></strong--> </small><br>
+	<small class="post-date">Posted on <?php echo $post['created_at'];?> <strong><h4>In the Category <?php echo $post['name']; ?></h4></strong> </small><br>
 	<img width="50%" src="<?php echo site_url(); ?>assets/images/<?php echo $post['post_image'];?>"><br>
 	<br>
 	<?php echo word_limiter( $post['body'],50);?>

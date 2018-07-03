@@ -69,9 +69,7 @@
       Comments &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
       </button>
       <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Pending</a><hr>
-      <a class="dropdown-item" href="#">Approved</a><hr>
-      <a class="dropdown-item" href="#">All</a>
+      <a class="dropdown-item" href="<?php echo base_url(); ?>/admin/comments">All</a>
       </div>
       </div>
     </li>

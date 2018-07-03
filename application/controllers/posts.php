@@ -24,9 +24,17 @@
 			$this->load->view('templates/footer');
    	}
 
-   	public function featured()
+   	public function featured($offset=0)
    	{
-   		$data['posts']=$this->post_model->featured_posts();
+
+   		$config['base_url'] = base_url() . 'posts/featured';
+			$config['total_rows'] = $this->db->count_all('posts');
+			$config['per_page'] = 3;
+			$config['uri_segment'] = 3;
+			$config['attributes'] = array('class' => 'pagination-link');
+
+		$this->pagination->initialize($config);
+   		$data['posts']=$this->post_model->featured_posts($config['per_page'], $offset);
 
    		$data['title'] = 'Featured Posts';
  
@@ -133,6 +141,31 @@
 
    	}
 
+   	public function comments(){
+
+    	if(!$this->session->userdata('logg_in')){
+				redirect('admin/login');
+			}
+
+		$data['title'] = 'All Comments';
+		$data['comments']  = $this->Comment_model->admin_comments();
+
+		$this->load->view('admin/left');
+		$this->load->view('admin/comments', $data);
+   	}
+
+   	public function delete_comment($id)
+   	{
+   		if(!$this->session->userdata('logg_in')){
+				redirect('admin/login');
+			}
+
+		$this->Comment_model->delete_comments($id);
+
+		$this->session->set_flashdata('comment_deleted', 'Your comment has been deleted');
+		 redirect('posts');
+   	}
+
     public function delete($id){
     		//echo $id;
 
@@ -165,8 +198,6 @@
 			$this->load->view('templates/left');
 
 			$this->load->view('posts/edit', $data);
-
-			//$this->load->view('templates/footer');
 		}
 
 		public function update(){
@@ -174,7 +205,25 @@
 			if(!$this->session->userdata('logg_in')){
 				redirect('admin/login');
 			}
-			$this->post_model->update_post();
+
+			$config['upload_path'] = './assets/images';
+				$config['allowed_types'] = 'gif|jpg|png';
+				$config['max_size'] = '2048';
+				$config['max_width'] = '2000';
+				$config['max_height'] = '2000';
+				$this->load->library('upload', $config);
+
+				if(!$this->upload->do_upload()){
+
+					$errors = array('error' => $this->upload->display_errors());
+					$post_image = 'noimage.jpg';
+
+				} else {
+
+					$data = array('upload_data' => $this->upload->data());
+					$post_image = $_FILES['userfile']['name'];
+				}
+			$this->post_model->update_post($post_image);
 
 			$this->session->set_flashdata('post_updated', 'Your post has been updated');
 			redirect('posts');
@@ -183,13 +232,8 @@
 
 		public function ask_a_question(){
 
-			/*if(!file_exists(APPPATH.'views/posts/'.$page.'.php')){
-				show_404();
-			}*/
-
 			$data['posts'] = $this->post_model->get_posts();
-			//$data['title'] = ucfirst($page);
-
+	
 			$this->load->view('templates/header',$data);
 			$this->load->view('posts/ask-a-question',$data);
 			$this->load->view('templates/footer');

@@ -268,3 +268,7 @@
       <?php if($this->session->flashdata('forum_created')): ?>
         <?php echo '<p class="alert alert-success">'.$this->session->flashdata('forum_created').'</p>'; ?>
       <?php endif; ?>
+
+      <?php if($this->session->flashdata('comment_deleted')): ?>
+        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('comment_deleted').'</p>'; ?>
+      <?php endif; ?>

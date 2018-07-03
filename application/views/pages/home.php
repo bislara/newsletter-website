@@ -290,67 +290,32 @@
 
         </div>
       </div> 
-      
+  
 
+           
+      <?php foreach($posts as $post) : ?>
+        
+        <div class="col-sm-2">
+          <div style="border-style: dotted solid dashed double;"> 
+        
+        <img width="50%" src="<?php echo site_url(); ?>assets/images/<?php echo $post['post_image'];?>"><br>
+        <br>
+        <h3 style="font-family: courier;"><strong><?php echo $post['title']; ?></strong></h3><br>
+        
+        <small class="post-date">Posted on <?php echo $post['created_at'];?> <!--strong><h4><?php echo $post['name']; ?></h4></strong--> </small><br>
 
-      
-      <div class="col-sm-2">
-        <div style="border-style: dotted solid dashed double;">
-        <img src="<?php echo base_url("assets/images/phn.jpg"); ?>" alt="no image" style="width:48%; height: ">
-         <img src="<?php echo base_url("assets/images/phn.jpg"); ?>" alt="no image" style="width:48%; height: ">
-         <br>
-         <br>
-         <a href="#"><b><u style="color: red"> ONE PLUS INDIA LAUCNCH ON MAY 17 </u></b></a>
-
-        </div>
+        <?php echo word_limiter( $post['body'],10);?>
+        <br><br>
+        <p><a href="<?php echo site_url('/posts/'.$post['slug']);?>">Read More..</a>
+          </p>
+        <br><br><hr>
       </div>
-      
-
-      <div class="col-sm-2">
-        <div style="border-style: dotted solid dashed double;">
-        <img src="<?php echo base_url("assets/images/phn.jpg"); ?>" alt="no image" style="width:48%; height: ">
-         <img src="<?php echo base_url("assets/images/phn.jpg"); ?>" alt="no image" style="width:48%; height: ">
-         <br>
-         <br>
-         <a href="#"><b><u style="color: red"> ONE PLUS INDIA LAUCNCH ON MAY 17 </u></b></a>
-
-        </div>
-      </div> 
-      
-
-
-      
-      <div class="col-sm-2">
-        <div style="border-style: dotted solid dashed double;">
-        <img src="<?php echo base_url("assets/images/phn.jpg"); ?>" alt=no image" style="width:48%; height: ">
-         <img src="<?php echo base_url("assets/images/phn.jpg"); ?>" alt="no image" style="width:48%; height: ">
-         <br>
-         <br>
-         <a href="#"><b><u style="color: red">ONE PLUS INDIA LAUCNCH ON MAY 17 </u></b></a>
-
-        </div>
-      </div> 
-
-       <div class="col-sm-2">
-        <div style="border-style: dotted solid dashed double;">
-        <img src="<?php echo base_url("assets/images/phn.jpg"); ?>" alt="no image" style="width:48%; height: ">
-         <img src="<?php echo base_url("assets/images/phn.jpg"); ?>" alt="no image" style="width:48%; height: ">
-         <br>
-         <br>
-         <a href="#"><b><u style="color: red"> ONE PLUS INDIA LAUCNCH ON MAY 17 </u></b></a>
-
-        </div>
-      </div> 
-
-       <div class="col-sm-2">
-        <div style="border-style: dotted solid dashed double;">
-        <img src="<?php echo base_url("assets/images/phn.jpg"); ?>" alt="no image" style="width:48%; height: ">
-         <img src="<?php echo base_url("assets/images/phn.jpg"); ?>" alt="no image" style="width:48%; height: ">
-         <br>
-         <br>
-         <a href="#"><b><u style="color: red"> ONE PLUS INDIA LAUCNCH ON MAY 17  </u></b></a>
-
-        </div>
+    </div>
+    <?php endforeach; ?>
+      <div class="pagination-link" align="right">
+        <?php echo $this->pagination->create_links(); ?>
+      </div>
+     
       </div> 
 
       </div>
