@@ -50,6 +50,30 @@
 
    	}
 
+   	public function editor($offset=0)
+   	{
+
+   		$config['base_url'] = base_url() . 'posts/editor';
+			$config['total_rows'] = $this->db->count_all('posts');
+			$config['per_page'] = 3;
+			$config['uri_segment'] = 3;
+			$config['attributes'] = array('class' => 'pagination-link');
+
+		$this->pagination->initialize($config);
+   		$data['posts']=$this->post_model->editors_pick($config['per_page'], $offset);
+
+   		$data['title'] = 'Editor"s Pick ';
+ 
+   		if (empty($data['posts'])) {
+   			show_404();
+   		}
+
+   		$this->load->view('templates/header',$data);
+		$this->load->view('posts/editors_pick', $data);
+		$this->load->view('templates/footer');
+
+   	}
+
    	public function view($slug = NULL){ 
 
    		$data['post']  = $this->post_model->get_posts($slug);

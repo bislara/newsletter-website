@@ -66,6 +66,7 @@ $route['forum/(:any)']='forum/view/$1';
 $route['forum'] ='forum/add';
 $route['categories']='categories/index';
 $route['category/posts/(:any)']='categories/posts/$1';
+$route['posts/editor']='posts/editor';
 $route['posts/featured'] ='posts/featured';
 $route['posts/index'] ='posts/index';
 $route['posts/admin/browse']='posts/browse';

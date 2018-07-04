@@ -33,10 +33,25 @@
 				$this->db->limit($limit, $offset);
 			}
 
-		$this->db->order_by('id', 'DESC');
+		$this->db->order_by('posts.id', 'DESC');
+		$this->db->join('categories', 'categories.id = posts.category_id');
 
 		$query=$this->db->get_where('posts',array('featured'=>1));
 		return $query->result_array();
+	}
+
+	public function editors_pick($limit = FALSE, $offset = FALSE){
+
+		if($limit){
+				$this->db->limit($limit, $offset);
+			}
+
+		$this->db->order_by('views', 'DESC');
+		$this->db->join('categories', 'categories.id = posts.category_id');
+
+		$query = $this->db->get('posts');
+		return $query->result_array();
+		
 	}
 
    	public function create_post($post_image){

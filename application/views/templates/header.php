@@ -208,7 +208,7 @@
       <li><a href="<?php echo base_url(); ?>categories"><p style="color: blue" >Categories &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i class="glyphicon glyphicon-option-vertical"></i></p></a></li>
       <li><a href="<?php echo base_url(); ?>posts"><p style="color: blue" >Popular posts &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i class="glyphicon glyphicon-option-vertical"></i></p></a></li>
       <li><a href="<?php echo base_url(); ?>posts/featured"><p style="color: blue" >Featured posts &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i class="glyphicon glyphicon-option-vertical"></i></p></a></li>
-      <li><a href="#"><p style="color: blue" >Photos &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i class="glyphicon glyphicon-option-vertical"></i></p></a></li>
+      <li><a href="<?php echo base_url(); ?>posts/editor"><p style="color: blue" >Editor's Pick &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i class="glyphicon glyphicon-option-vertical"></i></p></a></li>
       <li><a href="#"><p style="color: blue" >Videos </p></a></li>
     </ul>
    </div>
