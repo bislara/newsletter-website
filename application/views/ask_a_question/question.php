@@ -1,52 +1,55 @@
+
 <div class="container-fluid">
     <div class="row">
     <div class="col-sm-8 col-md-8 col-lg-8" >
     <div class="panel panel-default">
         <div class="panel-body">
 
-             <h3 style="color: blue"><strong>ASK A QUESTION</strong></h3>
-            <img src="<?php echo base_url("assets/images/ask-question.jpg");?>" width="100%">
-            <br><br>
-            <a href="#"><h4><strong>Acknowledging Queries: Ask a Question</strong></h4></a>
-            <p>Read on to find out the replies to your queries provided by the authority itself.When you stop learning, stop listening, stop looking and stop  asking questions,then it is time to die. </p>
+        <h3 style="font-family: courier;"><strong>Question by <?php echo $qs['name']; ?></strong></h3><br>
+    
+        <strong><h4><a href="<?php echo site_url('/posts/question/'.$qs['id']);?>"> Question : <?php echo $qs['question']; ?></a><br><br> Authority to ask : <?php echo $qs['authority']; ?></h4></strong><br>
+        <br>
+    <br><hr>
+	<br>
+<h3>Answers</h3>
+ <?php if($answers) : ?>
 
-            <div class="col-sm-12">
+	<?php foreach($answers as $comment) : ?>
 
-            <?php echo validation_errors(); ?>
-            <?php echo form_open('posts/ask-a-question'); ?>
-             
-            <div class="form-group">
-                  <h4>Name : </h4>
-                  <input type="text" maxlength="500" name="name" class="form-control" placeholder="Your Name">
-             </div>
+		<div class="well">
+		 <h5><?php echo $comment['body']; ?> [by <strong><?php echo $comment['name']; ?></strong>]</h5>
+		</div>
+	<?php endforeach; ?>
+<?php else : ?>
+	<p>No Answers To Display</p>
+<?php endif; ?>
+<hr>
 
-             <div class="form-group">
-                  <h4>Your Question</h4>
-                  <input type="text" maxlength="500" name="question" class="form-control" placeholder="How do I apply for a medical leave?">
-             </div>
+<?php if($this->session->userdata('logg_in')) : ?>
+      
+<div class="col-sm-6 col-md-6 col-lg-6" >
+<h3>Add Answer</h3>
 
-            <div class="form-group">
-                <h4>Authority you want to ask</h4>
-                    <input type="text" maxlength="150" name="authority" class="form-control" placeholder="e.g. Dean (Academic), Chief Warden, Director, etc.">
-            </div>
+<?php echo validation_errors(); ?>
+<?php echo form_open('answers/create/'.$qs['id']); ?>
 
-            <div class="col-xs-12">
-                 <input name="post-submit" class="btn btn-lg pull-left" type="submit" value="Submit" />
-                    <div id="loader" class="btn-loader collapse pull-left">
-                        <i class="fa fa-refresh fa-spin"></i>
-                    </div>
-            </div>
-            </form>
-            
-            </div>
+	<div class="form-group">
+		<label>Name</label>
+		<input type="text" name="name" class="form-control">
+	</div>
 
-
-        </div>
-    </div>
-    </div>
-
-
-
+	<div class="form-group">
+		<label>Body</label>
+		<textarea name="body" class="form-control"></textarea>
+	</div>
+	<input type="hidden" name="id" value="<?php echo $qs['id']; ?>">
+	<button class="btn btn-primary" type="submit">Submit</button>
+</form>
+</div>
+<?php endif; ?>
+</div>
+</div>
+</div>
 
 <div class="col-sm-4 col-md-4 col-lg-4" >
     	<div class="panel panel-default">

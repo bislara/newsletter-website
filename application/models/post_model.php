@@ -74,6 +74,34 @@
 
 	}
 
+	public function ask_question(){
+
+		$data  =  array(
+
+
+				'name' => $this->input->post('name'),
+				'question' => $this->input->post('question'),
+				'authority' => $this->input->post('authority'),
+				'user_id' => $this->session->userdata('user_id')
+			);
+
+		return $this->db->insert('ask_a_question',$data);
+	}
+
+	public function get_questions($id=FALSE){
+
+		if($id == FALSE){
+
+				$this->db->order_by('id', 'DESC');
+			
+				$query = $this->db->get('ask_a_question');
+				return $query->result_array(); 
+   		}
+
+      $query = $this->db->get_where('ask_a_question', array('id' => $id));
+   		return $query->row_array();
+	}
+
 	public function get_posts_by_category($category_id){
 		
 			$this->db->order_by('posts.id', 'DESC');

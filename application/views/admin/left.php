@@ -28,10 +28,10 @@
     <li class="list-group-item list-group-item-action list-group-item-danger"><i class="glyphicon glyphicon-home"></i><a href="<?php echo base_url(); ?>/admin"> Home</a></li>
     <li href="#" class="list-group-item list-group-item-action list-group-item-warning"><p style="text-align: right;"><img src="<?php echo base_url("assets/images/icon.jpg"); ?>" align="left" width="13%"><u>Biswajeet Sahoo</u>
       <?php if(!$this->session->userdata('logg_in')) : ?>
-      <u><a href="<?php echo base_url(); ?>/admin_user/login">Login</a></u>
+      <u><a href="<?php echo base_url(); ?>/admin/login">Login</a></u>
     <?php endif; ?>
       <?php if($this->session->userdata('logg_in')) : ?>
-      <u><a href="<?php echo base_url(); ?>/admin_user/logout">Logout</a></u>
+      <u><a href="<?php echo base_url(); ?>admin/logout">Logout</a></u>
     <?php endif; ?>
     </p>
   </li>

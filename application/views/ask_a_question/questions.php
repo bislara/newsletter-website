@@ -1,54 +1,31 @@
+<h3 style="text-align: center; color:  #0CBD0D ;"><mark><?= $title?></mark></h3>
+<br><br>
+<h4 style="color: green;">&nbsp; Ask a New <a href="<?php echo site_url('/posts/ask-a-question') ?>">Question</a></h4><br>
 <div class="container-fluid">
     <div class="row">
     <div class="col-sm-8 col-md-8 col-lg-8" >
     <div class="panel panel-default">
         <div class="panel-body">
 
-             <h3 style="color: blue"><strong>ASK A QUESTION</strong></h3>
-            <img src="<?php echo base_url("assets/images/ask-question.jpg");?>" width="100%">
-            <br><br>
-            <a href="#"><h4><strong>Acknowledging Queries: Ask a Question</strong></h4></a>
-            <p>Read on to find out the replies to your queries provided by the authority itself.When you stop learning, stop listening, stop looking and stop  asking questions,then it is time to die. </p>
 
-            <div class="col-sm-12">
+<?php foreach($questions as $qs) : ?>
+	
+	<h3 style="font-family: courier;"><strong>Question by <?php echo $qs['name']; ?></strong></h3><br>
+	
+    <strong><h4><a href="<?php echo site_url('/posts/question/'.$qs['id']);?>"> Question : <?php echo $qs['question']; ?></a><br><br> Authority to ask : <?php echo $qs['authority']; ?></h4></strong><br>
+	<br>
+	<br><hr>
 
-            <?php echo validation_errors(); ?>
-            <?php echo form_open('posts/ask-a-question'); ?>
-             
-            <div class="form-group">
-                  <h4>Name : </h4>
-                  <input type="text" maxlength="500" name="name" class="form-control" placeholder="Your Name">
-             </div>
+<?php endforeach; ?>
+<!-- <div class="pagination-link" align="right">
+		<?php echo $this->pagination->create_links(); ?>
+</div> -->
 
-             <div class="form-group">
-                  <h4>Your Question</h4>
-                  <input type="text" maxlength="500" name="question" class="form-control" placeholder="How do I apply for a medical leave?">
-             </div>
+</div>
+</div>
+</div>
 
-            <div class="form-group">
-                <h4>Authority you want to ask</h4>
-                    <input type="text" maxlength="150" name="authority" class="form-control" placeholder="e.g. Dean (Academic), Chief Warden, Director, etc.">
-            </div>
-
-            <div class="col-xs-12">
-                 <input name="post-submit" class="btn btn-lg pull-left" type="submit" value="Submit" />
-                    <div id="loader" class="btn-loader collapse pull-left">
-                        <i class="fa fa-refresh fa-spin"></i>
-                    </div>
-            </div>
-            </form>
-            
-            </div>
-
-
-        </div>
-    </div>
-    </div>
-
-
-
-
-<div class="col-sm-4 col-md-4 col-lg-4" >
+    <div class="col-sm-4 col-md-4 col-lg-4" >
     	<div class="panel panel-default">
         <div class="panel-body">
 
@@ -82,6 +59,5 @@
    </div>
 </div>
 </div>
-
 </div>
 </div>

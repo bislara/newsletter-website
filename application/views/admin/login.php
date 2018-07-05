@@ -1,7 +1,7 @@
 <div class="column">
 	<div class="col-sm-8 col-md-8 col-lg-8" >
 		<div class="container-fluid">
-<?php echo form_open('admin_user/login'); ?>
+<?php echo form_open('admin/login'); ?>
 
 	<div class="row">
 		<div class="col-md-4 col-md-offset-4">

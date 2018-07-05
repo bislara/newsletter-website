@@ -162,8 +162,6 @@
 
 		$this->load->view('posts/browse', $data);
 
-		//$this->load->view('templates/footer');
-
    	}
 
    	public function comments(){
@@ -256,13 +254,71 @@
 
 
 		public function ask_a_question(){
+		
+			if(!$this->session->userdata('logged_in')){
+				redirect('users/login');
+			}
 
 			$data['posts'] = $this->post_model->get_posts();
-	
-			$this->load->view('templates/header',$data);
-			$this->load->view('posts/ask-a-question',$data);
-			$this->load->view('templates/footer');
+			
+			$this->form_validation->set_rules('name', 'name', 'required');
+
+			$this->form_validation->set_rules('question', 'question', 'required');
+
+			$this->form_validation->set_rules('authority', 'authority', 'required');
+
+			if($this->form_validation->run() === FALSE){
+
+				$this->load->view('templates/header',$data);
+				$this->load->view('posts/ask-a-question',$data);
+				$this->load->view('templates/footer');
+			} else {
+
+				$this->post_model->ask_question();
+				$this->session->set_flashdata('qs_uploaded', 'Your question has been submitted');
+         		redirect('posts/ask-a-question');
+			}
+
 		}
+
+		public function questions(){
+
+			$data['title'] = 'Frequently Asked Questions';
+
+			$data['posts'] = $this->post_model->get_posts();
+
+			$data['questions']=$this->post_model->get_questions(FALSE);
+
+
+			$this->load->view('templates/header',$data);
+			$this->load->view('ask_a_question/questions', $data);
+			$this->load->view('templates/footer');
+
+		}
+
+		public function ind_question($id=NULL)
+		{
+
+			$data['qs']  = $this->post_model->get_questions($id);
+   			$data['posts'] = $this->post_model->get_posts();
+   			
+   			$post_id = $data['qs']['id'];
+			$data['answers'] = $this->Answer_model->get_ans($post_id);
+
+   			if (empty($data['qs'])) {
+   				show_404();
+   			}
+
+   			$data['title']='Question and Answers';
+
+   			$this->load->view('templates/header',$data);
+
+			$this->load->view('ask_a_question/question', $data);
+
+			$this->load->view('templates/footer');
+
+		}
+
 		
 	    public function search($slug = NULL){
 

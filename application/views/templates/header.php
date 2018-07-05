@@ -272,3 +272,7 @@
       <?php if($this->session->flashdata('comment_deleted')): ?>
         <?php echo '<p class="alert alert-success">'.$this->session->flashdata('comment_deleted').'</p>'; ?>
       <?php endif; ?>
+
+      <?php if($this->session->flashdata('qs_uploaded')): ?>
+        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('qs_uploaded').'</p>'; ?>
+      <?php endif; ?>
