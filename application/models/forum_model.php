@@ -38,6 +38,14 @@
 
          return $this->db->insert('forum', $data);
 
-   }
+      }
+
+      public function increase_reply($id){
+
+         $this->db->where('id', $id);
+
+         $this->db->set('reply', 'reply+1', FALSE);
+         return $this->db->update('forum');
+      }
 
    }

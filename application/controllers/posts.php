@@ -86,7 +86,7 @@
    		}
    		$data['title']=$data['post']['title'];
 
-   		$data['views']=$this->post_model->increase_views($data['post']['id']);
+   		$data['views']=$this->post_model->increase_views($post_id);
 
    		$this->load->view('templates/header',$data);
 
@@ -319,6 +319,18 @@
 
 		}
 
+		public function admin_ans(){
+
+			if(!$this->session->userdata('logg_in')){
+				redirect('admin/login');
+			}
+
+		$data['title'] = 'All Questions';
+		$data['questions']  = $this->Answer_model->admin_qs();
+
+		$this->load->view('admin/left');
+		$this->load->view('admin/questions', $data);
+		}
 		
 	    public function search($slug = NULL){
 

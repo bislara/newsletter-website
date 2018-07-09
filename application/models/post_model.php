@@ -22,7 +22,7 @@
 				return $query->result_array(); 
    }
 
-      $this->db->join('categories', 'categories.id = posts.category_id');
+      //$this->db->join('categories', 'categories.id = posts.category_id');
       $query = $this->db->get_where('posts', array('slug' => $slug));
    		return $query->row_array();
    	}

@@ -17,18 +17,18 @@
 		}
 
 		public function get_ans($post_id){
+
 			$query = $this->db->get_where('answers', array('post_id' => $post_id));
 			return $query->result_array();
 		}
 
-		// public function admin_comments(){
+		 public function admin_qs(){
 
-		// 	$this->db->order_by('id', 'DESC');
+			$this->db->order_by('id', 'DESC');
 			
-		// 	$query = $this->db->get('comments');
-		// 	return $query->result_array(); 
-		// }
+		 	$query = $this->db->get('ask_a_question');
+		 	return $query->result_array(); 
+		}
 
-	
 
 	}

@@ -57,7 +57,7 @@
 			 else 
 			{
 				$this->forum_model->create_forum();
-
+			
 				$this->session->set_flashdata('forum_created', 'Your forum has been started');
  				
    				redirect('forum');

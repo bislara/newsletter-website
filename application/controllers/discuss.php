@@ -25,6 +25,7 @@
 			} else {
 
 				$this->discuss_model->create_discuss($forum_id);
+				$this->forum_model->increase_reply($forum_id);
          		redirect('forum/'.$slug);
 			}
 		}

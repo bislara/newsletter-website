@@ -1,6 +1,14 @@
 <h3 style="text-align: center; color:  #0CBD0D ;"><mark><?= $title?></mark></h3>
 <br><br>
+
+<?php if(!$this->session->userdata('logged_in')) : ?>
+        <h4><a href="<?php echo base_url(); ?>users/login">&nbsp;<span class="glyphicon glyphicon-user"></span> Log In</a> to ask a new question.</h4><br>
+<?php endif; ?>
+
+<?php if($this->session->userdata('logged_in')) : ?>
 <h4 style="color: green;">&nbsp; Ask a New <a href="<?php echo site_url('/posts/ask-a-question') ?>">Question</a></h4><br>
+<?php endif; ?>
+
 <div class="container-fluid">
     <div class="row">
     <div class="col-sm-8 col-md-8 col-lg-8" >

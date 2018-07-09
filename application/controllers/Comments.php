@@ -26,6 +26,7 @@
 			} else {
 
 				$this->Comment_model->create_comment($post_id);
+				$this->Comment_model->increase_comment($data['post']['id']);
          		redirect('posts/'.$slug);
 			}
 		}

@@ -71,6 +71,17 @@
       </div>
       </div>
     </li>
+    <li class="list-group-item list-group-item-action">
+      <div class="dropdown">
+          
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+       Ask a Question &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+      </button>
+       <div class="dropdown-menu">
+      <a class="dropdown-item" href="<?php echo base_url(); ?>/admin/questions">All Questionss</a>
+      </div>
+      </div>
+    </li>
 
     </ul>
     </div>
@@ -81,7 +92,7 @@
          <?php echo '<p class="alert alert-success">'.$this->session->flashdata('admin_registered').'</p>'; ?>
       <?php endif; ?>
 
-      s<?php if($this->session->flashdata('login_failed')): ?>
+      <?php if($this->session->flashdata('login_failed')): ?>
         <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('login_failed').'</p>'; ?>
       <?php endif; ?>
 

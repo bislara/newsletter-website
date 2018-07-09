@@ -38,6 +38,14 @@
 
 		}
 
+		public function increase_comment($id){
+
+			$this->db->where('id', $id);
+
+			$this->db->set('comments', 'comments+1', FALSE);
+			return $this->db->update('posts');
+		}
+
 		public function create_comment_api($data)
 		{
 			$return = $this->db->insert('comments', $data);

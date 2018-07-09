@@ -6,7 +6,7 @@
         <div class="panel-body">
 <h3 style="text-align: center; color:  #0CBD0D ;"><mark><?php echo $post["title"]; ?></mark></h3>
 
-<small class="post-date">Posted on: <?php echo $post['created_at']; ?><br> Views -<?php echo $post['views']; ?><strong><h4><?php echo $post['name']; ?></h4></strong></small><br>
+<small class="post-date">Posted on: <?php echo $post['created_at']; ?><br> Views -<?php echo $post['views']; ?><!--strong><h4><?php echo $post['name']; ?></h4></strong--></small><br>
 <img width="100%" src="<?php echo site_url(); ?>assets/images/<?php echo $post['post_image'];?>"><br>
 	<br>
 <div class="post-body">

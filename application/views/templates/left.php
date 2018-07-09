@@ -72,6 +72,17 @@
       </div>
       </div>
     </li>
+    <li class="list-group-item list-group-item-action">
+      <div class="dropdown">
+          
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+       Ask a Question &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+      </button>
+       <div class="dropdown-menu">
+      <a class="dropdown-item" href="<?php echo base_url(); ?>/admin/questions">All Questionss</a>
+      </div>
+      </div>
+    </li>
 
     </ul>
     </div>
