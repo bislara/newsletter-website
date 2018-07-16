@@ -221,10 +221,32 @@
       <li><a href="<?php echo base_url(); ?>forum">Forum<span class="badge">new</span></a></li>
       <li><a href="#">Feedback</a></li>
       <li><a href="#">Contact Us</a></li>
+      <li><a class="up-arrow" href="#" data-toggle="tooltip" title="TO TOP">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+      </a></li>
     </ul>
     </div>
   </div>
 </nav> 
  
+<script>
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip(); 
+     
+      $(".navbar a, footer a[href='#']").on('click', function(event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+          var hash = this.hash;
+
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function(){  
+            window.location.hash = hash;
+          });
+        } 
+      });
+    })
+  </script>  
+
  </body>
  </html> 

@@ -636,8 +636,8 @@
           <li class="prev">&#10094;</li>
           <li class="next">&#10095;</li>
           <li>
-            June<br>
-            <span style="font-size:18px">2018</span>
+            July<br>
+            <span style="font-size:18px;">2018</span>
           </li>
         </ul>
       </div>
@@ -662,12 +662,12 @@
           <li>7</li>
           <li>8</li>
           <li>9</li>
-          <li><span class="active">10</span></li>
+          <li>10</li>
           <li>11</li>
           <li>12</li>
           <li>13</li>
           <li>14</li>
-          <li>15</li>
+          <li><span class="active">15</span></li>
           <li>16</li>
           <li>17</li>
           <li>18</li>
@@ -709,11 +709,32 @@
       <li><a href="<?php echo base_url(); ?>forum">Forum<span class="badge">new</span></a></li>
       <li><a href="#">Feedback</a></li>
       <li><a href="#">Contact Us</a></li>
+      <li><a class="up-arrow" href="#" data-toggle="tooltip" title="TO TOP">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+      </a></li>
     </ul>
     </div>
   </div>
 </nav> 
 
+<script>
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip(); 
+     
+      $(".navbar a, footer a[href='#']").on('click', function(event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+          var hash = this.hash;
+
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function(){  
+            window.location.hash = hash;
+          });
+        } 
+      });
+    })
+  </script>  
 
  </body>
 </html>

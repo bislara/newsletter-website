@@ -55,6 +55,8 @@ $route['api/post/submit/comments'] = 'api/Comment_submit';
 $route['api/signin'] = 'api/signin';
 $route['api/featured']='api/featured_post';
 $route['api/post/get/(:any)']='api/getPost_id/$1';
+$route['api/categories']='api/getCategories';
+$route['api/category/(:any)']='api/post_byCategory/$1';
 
 
 

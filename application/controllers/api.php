@@ -8,7 +8,7 @@
    		$data['post']  = $this->post_model->get_posts($slug);
    		//$data['posts'] = $this->post_model->get_posts();
    		$post_id = $data['post']['id'];
-		$data['comments'] = $this->Comment_model->get_comments($post_id);
+		   $data['comments'] = $this->Comment_model->get_comments($post_id);
 
    		if (empty($data['post'])) {
    			show_404();
@@ -113,5 +113,25 @@
             $this->load->view('api/getComments', $response);
          }
 
+         public function getCategories(){
+      
+         $data['title'] = 'Categories';
+         $data['categories'] = $this->category_model->get_categories();
+
+         $response['jsonResponse']=json_encode($data);
+         
+         $this->load->view('api/getComments', $response);
+
+      }
+
+      public function post_byCategory($id){
+
+         $data['title'] = $this->category_model->get_category($id)->name;
+         $data['posts'] = $this->post_model->get_posts_by_category($id);
+
+         $response['jsonResponse']=json_encode($data);
+         
+         $this->load->view('api/getComments', $response);
+      }
 
    }
