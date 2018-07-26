@@ -189,13 +189,13 @@
 		 redirect('posts');
    	}
 
-    public function delete($id){
-    		//echo $id;
+    public function delete($slug){
+    		//echo $slug;
 
     	if(!$this->session->userdata('logg_in')){
 				redirect('admin/login');
 			}
-		$this->post_model->delete_post($id);
+		$this->post_model->delete_post($slug);
 
 		$this->session->set_flashdata('post_deleted', 'Your post has been deleted');
 
@@ -203,7 +203,7 @@
 
 		}
 
-		public function edit($slug){
+	public function edit($slug){
 
 			if(!$this->session->userdata('logg_in')){
 				redirect('admin/login');

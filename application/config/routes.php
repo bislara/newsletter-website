@@ -68,6 +68,7 @@ $route['admin/questions']='posts/admin_ans';
 $route['users/login']='Users/login';
 $route['users/logout']='Users/logout';
 $route['users/register']='Users/register';
+$route['login'] ='Users/login';
 $route['forum/create']='forum/create';
 $route['forum/(:any)']='forum/view/$1';
 $route['forum'] ='forum/add';

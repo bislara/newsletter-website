@@ -112,9 +112,9 @@
 		}
 
 
-	public function delete_post($id){
+	public function delete_post($slug){
 
-			$this->db->where('id', $id);
+			$this->db->where('slug', $slug);
 			$this->db->delete('posts');
 			return true;
 
