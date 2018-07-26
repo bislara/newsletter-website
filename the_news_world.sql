@@ -2,10 +2,10 @@
 -- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Jul 16, 2018 at 01:10 AM
--- Server version: 5.7.19
--- PHP Version: 5.6.31
+-- Host: 127.0.0.1
+-- Generation Time: Jul 26, 2018 at 03:02 PM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 5.6.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `the news world`
+-- Database: `the_news_world`
 --
 
 -- --------------------------------------------------------
@@ -28,16 +28,14 @@ SET time_zone = "+00:00";
 -- Table structure for table `admin_user`
 --
 
-DROP TABLE IF EXISTS `admin_user`;
-CREATE TABLE IF NOT EXISTS `admin_user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `admin_user` (
+  `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `register_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `register_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admin_user`
@@ -52,15 +50,13 @@ INSERT INTO `admin_user` (`id`, `name`, `email`, `username`, `password`, `regist
 -- Table structure for table `answers`
 --
 
-DROP TABLE IF EXISTS `answers`;
-CREATE TABLE IF NOT EXISTS `answers` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `answers` (
+  `id` int(11) NOT NULL,
   `post_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `body` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `answers`
@@ -76,15 +72,13 @@ INSERT INTO `answers` (`id`, `post_id`, `name`, `body`, `created_at`) VALUES
 -- Table structure for table `ask_a_question`
 --
 
-DROP TABLE IF EXISTS `ask_a_question`;
-CREATE TABLE IF NOT EXISTS `ask_a_question` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ask_a_question` (
+  `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `question` varchar(255) NOT NULL,
-  `authority` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `authority` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ask_a_question`
@@ -100,13 +94,11 @@ INSERT INTO `ask_a_question` (`id`, `user_id`, `name`, `question`, `authority`) 
 -- Table structure for table `categories`
 --
 
-DROP TABLE IF EXISTS `categories`;
-CREATE TABLE IF NOT EXISTS `categories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `categories` (
+  `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `categories`
@@ -122,31 +114,28 @@ INSERT INTO `categories` (`id`, `name`, `created_at`) VALUES
 -- Table structure for table `comments`
 --
 
-DROP TABLE IF EXISTS `comments`;
-CREATE TABLE IF NOT EXISTS `comments` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `comments` (
+  `id` int(11) NOT NULL,
   `post_id` int(11) NOT NULL DEFAULT '0',
+  `status` int(11) NOT NULL DEFAULT '0',
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `body` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `comments`
 --
 
-INSERT INTO `comments` (`id`, `post_id`, `name`, `email`, `body`, `created_at`) VALUES
-(1, 2, 'lara', 'lara@gmail.com', 'great post..', '2018-06-04 22:06:39'),
-(2, 2, 'bro', 'hello@gmail.com', 'awesome job', '2018-06-04 22:11:54'),
-(3, 3, 'john', 'biswajeetsahoo54@gmail.com', 'nice one', '2018-06-05 15:52:49'),
-(4, 10, 'sambit', 'parida@gmail.com', 'awesome man..grand salute', '2018-06-06 18:15:29'),
-(5, 8, 'lara', 'lara@gmail.com', 'good', '2018-06-06 20:07:20'),
-(6, 8, 'unknown', 'abc@gmail.com', 'not good', '2018-06-06 20:08:48'),
-(7, 10, 'parida', 'parida@gmail.com', 'good..', '2018-06-06 20:35:32'),
-(9, 3, 'malkhan', 'malkhan@gmail.com', 'This comment api test', '2018-07-03 14:01:48'),
-(14, 11, 'samba', 'samba@gmail.com', 'this is a comment of local post.. ', '2018-07-09 04:45:13');
+INSERT INTO `comments` (`id`, `post_id`, `status`, `name`, `email`, `body`, `created_at`) VALUES
+(3, 3, 0, 'john', 'biswajeetsahoo54@gmail.com', 'nice one', '2018-06-05 15:52:49'),
+(4, 10, 0, 'sambit', 'parida@gmail.com', 'awesome man..grand salute', '2018-06-06 18:15:29'),
+(5, 8, 1, 'lara', 'lara@gmail.com', 'good', '2018-06-06 20:07:20'),
+(6, 8, 0, 'unknown', 'abc@gmail.com', 'not good', '2018-06-06 20:08:48'),
+(7, 10, 0, 'parida', 'parida@gmail.com', 'good..', '2018-06-06 20:35:32'),
+(9, 3, 1, 'malkhan', 'malkhan@gmail.com', 'This comment api test', '2018-07-03 14:01:48'),
+(14, 11, 1, 'samba', 'samba@gmail.com', 'this is a comment of local post.. ', '2018-07-09 04:45:13');
 
 -- --------------------------------------------------------
 
@@ -154,15 +143,13 @@ INSERT INTO `comments` (`id`, `post_id`, `name`, `email`, `body`, `created_at`) 
 -- Table structure for table `discuss`
 --
 
-DROP TABLE IF EXISTS `discuss`;
-CREATE TABLE IF NOT EXISTS `discuss` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `discuss` (
+  `id` int(11) NOT NULL,
   `forum_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `body` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `discuss`
@@ -181,17 +168,15 @@ INSERT INTO `discuss` (`id`, `forum_id`, `name`, `body`, `created_at`) VALUES
 -- Table structure for table `forum`
 --
 
-DROP TABLE IF EXISTS `forum`;
-CREATE TABLE IF NOT EXISTS `forum` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `forum` (
+  `id` int(11) NOT NULL,
   `reply` int(11) NOT NULL DEFAULT '0',
   `title` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `slug` varchar(255) NOT NULL,
   `body` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `forum`
@@ -208,9 +193,8 @@ INSERT INTO `forum` (`id`, `reply`, `title`, `username`, `slug`, `body`, `create
 -- Table structure for table `posts`
 --
 
-DROP TABLE IF EXISTS `posts`;
-CREATE TABLE IF NOT EXISTS `posts` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `posts` (
+  `id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
   `featured` int(11) NOT NULL DEFAULT '0',
   `user_id` int(11) NOT NULL,
@@ -220,20 +204,18 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `slug` varchar(255) NOT NULL,
   `post_image` varchar(255) NOT NULL DEFAULT 'noimage.jpg',
   `body` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `posts`
 --
 
 INSERT INTO `posts` (`id`, `category_id`, `featured`, `user_id`, `views`, `comments`, `title`, `slug`, `post_image`, `body`, `created_at`) VALUES
-(2, 2, 1, 0, 5, 2, 'Post Five', 'Post-Five', 'drone.jpg', '<p><strong>Hello</strong><strong> World I am Biswajeet Sahoo. this is edited.</strong>...... wtf..&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;</p>\r\n', '2018-06-04 08:37:15'),
-(3, 2, 1, 0, 3, 2, 'Post Four', 'Post-Four', 'noimage.jpg', '<p><strong>Hello</strong><strong> World I am Biswajeet Sahoo. this is edited.</strong>...... hey bye.&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;</p>\r\n', '2018-06-02 05:10:03'),
-(8, 1, 0, 2, 4, 0, 'post one', 'post-one', 'ask-question.jpg', '<p>this is post one</p>\r\n', '2018-06-05 15:55:59'),
-(10, 2, 1, 2, 3, 2, 'post Two', 'post-Two', 'noimage.jpg', '<p><em><strong>Hello everyone...this is post two...</strong></em></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>bye everyone..have a good day....kakdkaai</p>\r\n', '2018-06-06 18:14:19'),
-(11, 1, 0, 3, 7, 1, 'local', 'local', 'baidu.jpg', '<p>&nbsp;</p>\r\n\r\n<p>kaodpapskdpa</p>\r\n', '2018-06-07 04:01:19');
+(3, 2, 1, 0, 5, 2, 'Post Four', 'Post-Four', 'noimage.jpg', '<p><strong>Hello</strong><strong> World I am Biswajeet Sahoo. this is edited.</strong>...... hey bye.&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;</p>\r\n', '2018-06-02 05:10:03'),
+(8, 1, 0, 2, 6, 0, 'post one', 'post-one', 'ask-question.jpg', '<p>this is post one</p>\r\n', '2018-06-05 15:55:59'),
+(10, 2, 1, 2, 4, 2, 'post Two', 'post-Two', 'noimage.jpg', '<p><em><strong>Hello everyone...this is post two...</strong></em></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>bye everyone..have a good day....kakdkaai</p>\r\n', '2018-06-06 18:14:19'),
+(11, 1, 0, 3, 10, 1, 'local', 'local', 'baidu.jpg', '<p>&nbsp;</p>\r\n\r\n<p>kaodpapskdpa</p>\r\n', '2018-06-07 04:01:19');
 
 -- --------------------------------------------------------
 
@@ -241,16 +223,14 @@ INSERT INTO `posts` (`id`, `category_id`, `featured`, `user_id`, `views`, `comme
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `register_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  `register_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -260,7 +240,124 @@ INSERT INTO `users` (`id`, `name`, `email`, `username`, `password`, `register_da
 (1, 'rocky', 'rocky@gmail.com', 'rock', '827ccb0eea8a706c4c34a16891f84e7b', '2018-06-05 10:20:11'),
 (2, 'lara', 'larasahoo@gmail.com', 'lara', '827ccb0eea8a706c4c34a16891f84e7b', '2018-06-05 14:03:18'),
 (3, 'mahesh rana', 'mr33325@gmail.com', 'mr33325', 'e807f1fcf82d132f9bb018ca6738a19f', '2018-06-07 03:52:27'),
-(4, 'bhuban', 'Vhuban12@gmail.com', 'rebel bhuban', 'ae6aa7365359bd7185be714b6e8270e0', '2018-06-07 15:54:43');
+(4, 'bhuban', 'Vhuban12@gmail.com', 'rebel bhuban', 'ae6aa7365359bd7185be714b6e8270e0', '2018-06-07 15:54:43'),
+(5, 'satish', 'satish@gmail.com', '117ei0436', '202cb962ac59075b964b07152d234b70', '2018-07-26 05:53:52');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admin_user`
+--
+ALTER TABLE `admin_user`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `answers`
+--
+ALTER TABLE `answers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `ask_a_question`
+--
+ALTER TABLE `ask_a_question`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `discuss`
+--
+ALTER TABLE `discuss`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `forum`
+--
+ALTER TABLE `forum`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admin_user`
+--
+ALTER TABLE `admin_user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `answers`
+--
+ALTER TABLE `answers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `ask_a_question`
+--
+ALTER TABLE `ask_a_question`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `discuss`
+--
+ALTER TABLE `discuss`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `forum`
+--
+ALTER TABLE `forum`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

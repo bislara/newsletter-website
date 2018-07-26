@@ -140,7 +140,7 @@
 			return $this->db->update('posts', $data);
 		}
 
-	public function increase_views($id){
+		public function increase_views($id){
 
 		$this->db->where('id', $id);
 

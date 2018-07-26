@@ -67,7 +67,9 @@
       Comments &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
       </button>
       <div class="dropdown-menu">
-      <a class="dropdown-item" href="<?php echo base_url(); ?>/admin/comments">All</a>
+      <a class="dropdown-item" href="<?php echo base_url(); ?>/admin/comments">All</a><hr>
+      <a class="dropdown-item" href="<?php echo base_url(); ?>/admin/approved">Approved</a><hr>
+      <a class="dropdown-item" href="<?php echo base_url(); ?>/admin/pending">Pending</a>
       </div>
       </div>
     </li>
@@ -102,6 +104,11 @@
 
       <?php if($this->session->flashdata('admin_loggedout')): ?>
         <?php echo '<p class="alert alert-success">'.$this->session->flashdata('admin_loggedout').'</p>'; ?>
+      <?php endif; ?>
+
+
+      <?php if($this->session->flashdata('comment_approved')): ?>
+        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('comment_approved').'</p>'; ?>
       <?php endif; ?>
 
 

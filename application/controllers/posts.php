@@ -79,7 +79,8 @@
    		$data['post']  = $this->post_model->get_posts($slug);
    		$data['posts'] = $this->post_model->get_posts();
    		$post_id = $data['post']['id'];
-		$data['comments'] = $this->Comment_model->get_comments($post_id);
+		//$data['comments'] = $this->Comment_model->get_comments($post_id);
+   		$data['comments'] = $this->Comment_model->approved_comments($post_id);
 
    		if (empty($data['post'])) {
    			show_404();
@@ -175,6 +176,44 @@
 
 		$this->load->view('admin/left');
 		$this->load->view('admin/comments', $data);
+   	}
+
+   	public function approve_comments(){
+
+   		if(!$this->session->userdata('logg_in')){
+				redirect('admin/login');
+			}
+
+		$data['title'] = 'Approved Comments';
+		$data['comments']  = $this->Comment_model->approved_comment();
+
+		$this->load->view('admin/left');
+		$this->load->view('admin/approved', $data);
+   	}
+
+   	public function pending_comments(){
+
+   		if(!$this->session->userdata('logg_in')){
+				redirect('admin/login');
+			}
+
+		$data['title'] = 'Pending Comments';
+		$data['comments']  = $this->Comment_model->pending_comment();
+
+		$this->load->view('admin/left');
+		$this->load->view('admin/pending', $data);
+   	}
+
+   	public function approve($id){
+
+   		if(!$this->session->userdata('logg_in')){
+				redirect('admin/login');
+			}
+
+		$this->Comment_model->approve_comment($id);
+
+		$this->session->set_flashdata('comment_approved', 'The comment has been approved');
+		 redirect('posts');
    	}
 
    	public function delete_comment($id)

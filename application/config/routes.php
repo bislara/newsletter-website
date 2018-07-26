@@ -59,7 +59,8 @@ $route['api/categories']='api/getCategories';
 $route['api/category/(:any)']='api/post_byCategory/$1';
 
 
-
+$route['admin/approved'] ='posts/approve_comments';
+$route['admin/pending']='posts/pending_comments';
 $route['admin/comments']='posts/comments';
 $route['admin/login'] ='admin_user/login';
 $route['admin/logout'] ='admin_user/logout';

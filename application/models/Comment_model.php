@@ -18,7 +18,15 @@
 		}
 
 		public function get_comments($post_id){
+
 			$query = $this->db->get_where('comments', array('post_id' => $post_id));
+			return $query->result_array();
+		}
+
+		public function approved_comments($post_id){
+			
+
+			$query = $this->db->query("SELECT * FROM comments WHERE post_id='$post_id' AND status='1'; ");
 			return $query->result_array();
 		}
 
@@ -27,6 +35,30 @@
 			$this->db->order_by('id', 'DESC');
 			
 			$query = $this->db->get('comments');
+			return $query->result_array(); 
+		}
+
+		public function approved_comment(){
+
+			$this->db->order_by('id', 'DESC');
+			
+			$query=$this->db->get_where('comments',array('status'=>1));
+			return $query->result_array(); 
+		}
+
+		public function approve_comment($id){
+
+			$this->db->where('id', $id);
+
+			$this->db->set('status', 'status+1', FALSE);
+			return $this->db->update('comments');
+		}
+
+		public function pending_comment(){
+
+			$this->db->order_by('id', 'DESC');
+			
+			$query=$this->db->get_where('comments',array('status'=>0));
 			return $query->result_array(); 
 		}
 
